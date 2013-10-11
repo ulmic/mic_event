@@ -1,0 +1,27 @@
+- model_class = Checkin
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:member_id)
+      %th= model_class.human_attribute_name(:place_id)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:status)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @checkins.each do |checkin|
+      %tr
+        %td= link_to checkin.id, checkin_path(checkin)
+        %td= checkin.member_id
+        %td= checkin.place_id
+        %td= checkin.description
+        %td= checkin.status
+        %td= checkin.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_checkin_path(checkin), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), checkin_path(checkin), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_checkin_path, :class => 'btn btn-primary'

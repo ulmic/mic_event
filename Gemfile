@@ -13,6 +13,7 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'draper', '~> 1.0.0'
 gem 'jquery-rails'
+gem 'enumerize'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
