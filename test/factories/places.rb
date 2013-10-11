@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :place do
-    title       { generate :string }
+    title
     description { generate :string }
   end
 end

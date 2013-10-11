@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   include AuthHelper
 
-  def check_user_sign
-    unless user_signed_in?
+  def check_member_sign
+    unless member_signed_in?
       redirect_to '/404'
     end
   end
