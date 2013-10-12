@@ -28,6 +28,7 @@ group :test do
   gem 'turn'
   gem 'tconsole'
   gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do

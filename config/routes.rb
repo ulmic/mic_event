@@ -3,4 +3,5 @@ MicEvents::Application.routes.draw do
   resources :users
   resources :members
   resources :checkins
+  resources :events
 end
