@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :member
   belongs_to :place
+  has_many :checkins
 
   validates :description, presence: true
   validates :place_id, presence: true

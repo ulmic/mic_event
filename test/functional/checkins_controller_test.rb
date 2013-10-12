@@ -4,6 +4,7 @@ class CheckinsControllerTest < ActionController::TestCase
   setup do
     @checkin = create :checkin
     @member = create :member
+    @event = create :event
   end
 
   test "should get index" do
@@ -22,6 +23,8 @@ class CheckinsControllerTest < ActionController::TestCase
     member_sign_in @member
 
     attributes = attributes_for :checkin
+    attributes[:member_id] = @member.id
+    attributes[:event_id] = @event.id
     post :create, checkin: attributes
     assert_response :redirect
 
