@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131012141017) do
+ActiveRecord::Schema.define(:version => 20131012125336) do
 
   create_table "checkins", :force => true do |t|
     t.integer  "member_id"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20131012141017) do
     t.text     "description"
     t.integer  "member_id"
     t.integer  "place_id"
-    t.datetime "event_time"
+    t.date     "event_time"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
