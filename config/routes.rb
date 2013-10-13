@@ -3,7 +3,11 @@ MicEvents::Application.routes.draw do
   resources :places
   resources :users
   resources :members
-  resources :checkins
-  resources :events
+  resources :events do
+    member do
+      resources :checkins
+    end
+  end
   resource :welcome, only: :index
+  resource :sessions
 end

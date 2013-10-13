@@ -14,4 +14,10 @@ module AuthHelper
   def authenticate_member?(member, password)
     member.password === password
   end
+
+  def current_member
+    if session[:member_id]
+      @current_member ||= Member.find(session[:member_id])
+    end
+  end
 end

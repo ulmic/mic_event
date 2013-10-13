@@ -15,7 +15,7 @@ class CheckinsControllerTest < ActionController::TestCase
   test "should get new checkin" do
     member_sign_in @member
 
-    get :new
+    get :new, id: @event
     assert_response :success
   end
 
@@ -24,8 +24,7 @@ class CheckinsControllerTest < ActionController::TestCase
 
     attributes = attributes_for :checkin
     attributes[:member_id] = @member.id
-    attributes[:event_id] = @event.id
-    post :create, checkin: attributes
+    post :create, id: @event, checkin: attributes
     assert_response :redirect
 
     @checkin = Checkin.last
@@ -78,7 +77,7 @@ class CheckinsControllerTest < ActionController::TestCase
 
   test "should not update checkin with render edit" do
     attributes = attributes_for :checkin
-    attributes[:title] = nil
+    attributes[:member_id] = nil
     put :update, id: @checkin, checkin: attributes
     assert_response :redirect
   end
