@@ -3,7 +3,7 @@ class Checkin < ActiveRecord::Base
 
   attr_accessible :description,
                   :member_id,
-                  :place_id,
+                  :event_id,
                   :status
 
   enumerize :status, in: [:organizer,
@@ -11,9 +11,9 @@ class Checkin < ActiveRecord::Base
                           default: :organizer
 
   belongs_to :member
-  belongs_to :place
+  belongs_to :event
 
   validates :member_id, presence: true
-  validates :place_id, presence: true
+  validates :event_id, presence: true
   validates :status, presence: true
 end

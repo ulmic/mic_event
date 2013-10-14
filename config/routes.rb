@@ -1,6 +1,13 @@
 MicEvents::Application.routes.draw do
+  root to: "welcome#index"
   resources :places
   resources :users
   resources :members
-  resources :checkins
+  resources :events do
+    member do
+      resources :checkins
+    end
+  end
+  resource :welcome, only: :index
+  resources :session
 end

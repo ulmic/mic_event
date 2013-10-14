@@ -4,17 +4,18 @@ class CheckinsControllerTest < ActionController::TestCase
   setup do
     @checkin = create :checkin
     @member = create :member
+    @event = create :event
   end
 
   test "should get index" do
-    get :index
+    get :index, id: @event
     assert_response :success
   end
 
   test "should get new checkin" do
     member_sign_in @member
 
-    get :new
+    get :new, id: @event
     assert_response :success
   end
 
@@ -22,7 +23,8 @@ class CheckinsControllerTest < ActionController::TestCase
     member_sign_in @member
 
     attributes = attributes_for :checkin
-    post :create, checkin: attributes
+    attributes[:member_id] = @member.id
+    post :create, id: @event, checkin: attributes
     assert_response :redirect
 
     @checkin = Checkin.last
@@ -69,14 +71,14 @@ class CheckinsControllerTest < ActionController::TestCase
 
     attributes = attributes_for :checkin
     attributes[:member_id] = nil
-    post :create, checkin: attributes
+    post :create, id: @event, checkin: attributes
     assert_response :success
   end
 
   test "should not update checkin with render edit" do
     attributes = attributes_for :checkin
-    attributes[:title] = nil
+    attributes[:member_id] = nil
     put :update, id: @checkin, checkin: attributes
-    assert_response :redirect
+    assert_response :success
   end
 end

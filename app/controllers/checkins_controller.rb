@@ -1,5 +1,5 @@
 class CheckinsController < ApplicationController
-  before_filter :check_member_sign, except: [ :index, :show ]
+  #before_filter :check_member_sign, except: [ :index, :show ]
 
   def index
     @checkins = Checkin.all.reverse
@@ -19,6 +19,8 @@ class CheckinsController < ApplicationController
 
   def create
     @checkin = Checkin.new params[:checkin]
+    @checkin.event_id = params[:id]
+    @checkin.member_id = current_member.id
     if @checkin.save
       redirect_to @checkin
     else

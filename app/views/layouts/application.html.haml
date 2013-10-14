@@ -1,0 +1,26 @@
+%html
+  %head
+    %title Этажи Роста
+  %body
+    .navbar-wrapper
+      .container
+        .navbar{ class: "navbar-inverse" }
+          .navbar-inner
+            %button{ class: "btn btn-navbar" }
+              %span{ class: "icon-bar" }
+              %span{ class: "icon-bar" }
+              %span{ class: "icon-bar" }
+            %a{ class: "brand", href: root_path }
+              Этажи Роста МИЦ
+            .nav-collapse{ class: "collapse" }
+              %ul{ class: "nav" }
+                %li{ class: "active" }
+                  %a{ href: events_path }
+                    Мероприятия
+
+    .jumbotron
+      = yield
+
+    = render "layouts/footer"
+    = stylesheet_link_tag    "bootstrap_and_overrides", media: "all"
+    = stylesheet_link_tag "application"

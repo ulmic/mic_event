@@ -1,0 +1,6 @@
+textarea {
+  height: 500px;
+  &:focus {
+    height: 100px;
+  }
+}

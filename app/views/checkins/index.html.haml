@@ -6,7 +6,7 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:member_id)
-      %th= model_class.human_attribute_name(:place_id)
+      %th= model_class.human_attribute_name(:event_id)
       %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:status)
       %th= model_class.human_attribute_name(:created_at)
@@ -16,7 +16,7 @@
       %tr
         %td= link_to checkin.id, checkin_path(checkin)
         %td= checkin.member_id
-        %td= checkin.place_id
+        %td= checkin.event_id
         %td= checkin.description
         %td= checkin.status
         %td= checkin.created_at
