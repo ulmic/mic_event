@@ -9,5 +9,5 @@ MicEvents::Application.routes.draw do
     end
   end
   resource :welcome, only: :index
-  resource :sessions
+  resources :session
 end

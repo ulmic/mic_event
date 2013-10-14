@@ -8,7 +8,7 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, id: @event
     assert_response :success
   end
 
@@ -71,7 +71,7 @@ class CheckinsControllerTest < ActionController::TestCase
 
     attributes = attributes_for :checkin
     attributes[:member_id] = nil
-    post :create, checkin: attributes
+    post :create, id: @event, checkin: attributes
     assert_response :success
   end
 
@@ -79,6 +79,6 @@ class CheckinsControllerTest < ActionController::TestCase
     attributes = attributes_for :checkin
     attributes[:member_id] = nil
     put :update, id: @checkin, checkin: attributes
-    assert_response :redirect
+    assert_response :success
   end
 end
