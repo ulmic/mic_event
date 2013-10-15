@@ -70,7 +70,7 @@ class CheckinsControllerTest < ActionController::TestCase
     member_sign_in @member
 
     attributes = attributes_for :checkin
-    attributes[:member_id] = nil
+    attributes[:status] = nil
     post :create, id: @event, checkin: attributes
     assert_response :success
   end
