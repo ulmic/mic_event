@@ -11,7 +11,8 @@ class SessionControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    attrs = { email: @member.email, password: @member.password }
+    member = create :member
+    attrs = { email: "nat.mu@mail.ru", password: "123" }
 
     post :create, member: attrs
     assert_response :redirect
