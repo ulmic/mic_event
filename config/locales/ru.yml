@@ -1,0 +1,15 @@
+ru:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d.%m.%Y %I:%M"
+  activerecord:
+    errors:
+      models:
+        admin_user:
+          attributes:
+            email:
+              blank: "Email не может быть пустым."
