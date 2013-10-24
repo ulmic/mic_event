@@ -4,19 +4,22 @@
   %body
     .navbar-wrapper
       .container
-        .navbar{ class: "navbar-inverse" }
+        .navbar.navbar-inverse
           .navbar-inner
-            %button{ class: "btn btn-navbar" }
-              %span{ class: "icon-bar" }
-              %span{ class: "icon-bar" }
-              %span{ class: "icon-bar" }
-            %a{ class: "brand", href: root_path }
+            %button.btn.btn-navbar
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{ href: root_path }
               Этажи Роста МИЦ
-            .nav-collapse{ class: "collapse" }
-              %ul{ class: "nav" }
-                %li{ class: "active" }
+            .nav-collapse.collapse
+              %ul.nav
+                %li
                   %a{ href: events_path }
                     Мероприятия
+            .nav-collapse.collapse
+              %a.btn.btn-primary{ href: new_session_path }
+                Войти
 
     .jumbotron
       = yield

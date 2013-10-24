@@ -4,7 +4,7 @@ FactoryGirl.define do
     middle_name { generate :string }
     last_name   { generate :string }
     number      { generate :integer }
-    email
-    password
+    email "nat.mu@mail.ru"
+    password "123"
   end
 end
