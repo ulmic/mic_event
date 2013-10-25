@@ -16,9 +16,11 @@ class Member < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :middle_name, presence: true
-  validates :number, presence: true
+  validates :number, presence: true,
+                     uniqueness: true
   validates :email, presence: true,
-                    email: true
+                    email: true,
+                    uniqueness: true
   validates :password, presence: true
   validates :motto, presence: true, length: { maximum: 140 }
 end
