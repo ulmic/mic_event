@@ -1,5 +1,6 @@
 ru:
   save: Сохранить
+  edit: Изменить
   cancel: Отмена
   mandatory attributes: отмечены обязательные для заполнения аттрибуты
   members:
@@ -7,6 +8,8 @@ ru:
       registration: Регистрация
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
+    edit:
+      profile: профиль
   date:
     formats:
       default: "%d.%m.%Y"
