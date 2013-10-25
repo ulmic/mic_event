@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20131025024453) do
     t.string   "motto"
     t.text     "photo"
     t.text     "post"
+    t.integer  "parent_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

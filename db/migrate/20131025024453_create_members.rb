@@ -10,6 +10,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :motto
       t.text :photo
       t.text :post
+      t.integer :parent_id
       t.timestamps
     end
   end

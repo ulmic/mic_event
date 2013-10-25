@@ -7,7 +7,8 @@ class Member < ActiveRecord::Base
                   :password,
                   :photo,
                   :motto,
-                  :post
+                  :post,
+                  :parent_id
 
   mount_uploader :photo, PhotoUploader
 
