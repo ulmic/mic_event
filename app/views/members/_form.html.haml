@@ -23,7 +23,7 @@
       = f.label :email,            class: :span6
       = f.text_field :email,       class: :span6
       = f.label :password,         class: :span6
-      = f.text_field :password,    class: :span6
+      = f.text_field :password,    class: :span6, type: :password
       = f.label :photo,            class: :span6
       - if @member and @member.photo
         = image_tag @member.photo.thumb, class: 'img-polaroid'
