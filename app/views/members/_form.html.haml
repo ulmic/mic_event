@@ -1,27 +1,39 @@
+= stylesheet_link_tag :members
 - if @member.errors.any?
   #error_explanation
-    %h2= "#{ pluralize(@member.errors.count, "error") } #{ t('.prohibited_this_member_from_being_saved') }:"
+    = "#{ pluralize(@member.errors.count, "error") } #{ t('.prohibited_this_member_from_being_saved') }:"
     %ul
     - @member.errors.full_messages.each do |msg|
       %li= msg
-= simple_form_for @member, html: { class: 'form-horizontal' } do |f|
+= simple_form_for @member do |f|
   - f.with_options input_html: { class: :span6 } do |f|
-    = f.input :first_name
-    = f.input :middle_name
-    = f.input :last_name
-    = f.input :post
-    = f.input :number
-    = f.input :motto
-    = f.input :email
-    = f.input :password
-    - if @member and @member.photo
-      = image_tag @member.photo.thumb, class: 'img-polaroid'
-      %br
-      %br
-      %b
-        = t '.choose_new_photo'
-      %br
-      = f.file_field :photo
+    .field
+      = f.label :first_name,       class: :span6
+      = f.text_field :first_name,  class: :span6
+      = f.label :middle_name,      class: :span6
+      = f.text_field :middle_name, class: :span6
+      = f.label :last_name,        class: :span6
+      = f.text_field :last_name,   class: :span6
+      = f.label :post,             class: :span6
+      = f.text_field :post,        class: :span6
+      = f.label :number,           class: :span6
+      = f.number_field :number,    class: :span6, min: 1
+      = f.label :motto,            class: :span6
+      = f.text_field :motto,       class: :span6
+      = f.label :email,            class: :span6
+      = f.text_field :email,       class: :span6
+      = f.label :password,         class: :span6
+      = f.text_field :password,    class: :span6
+      = f.label :photo,            class: :span6
+      - if @member and @member.photo
+        = image_tag @member.photo.thumb, class: 'img-polaroid'
+        %b
+          = t '.choose_new_photo'
+        %br
+        = f.file_field :photo, class: 'btn'
+    .mandatory_attributes
+      * -
+      = t('mandatory attributes')
   .form-actions
-    = f.button :submit, class: 'btn-primary'
-    = link_to t('.cancel', default: t("helpers.links.cancel")), members_path, class: 'btn'
+    = f.button :submit, t('save'), class: 'btn btn-primary'
+    = link_to t('cancel', default: t("helpers.links.cancel")), members_path, class: 'btn'

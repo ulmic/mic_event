@@ -1,0 +1,15 @@
+ru:
+  activerecord:
+    models:
+      member: Член МИЦ
+    attributes:
+      member:
+        first_name:  Фамилия
+        middle_name: Имя
+        last_name:   Отчество
+        number:      Номер членского билета
+        email:       Email
+        password:    Пароль
+        photo:       Фото
+        motto:       Девиз по жизни
+        post:        Должность
