@@ -21,7 +21,7 @@ FactoryGirl.define do
     "http://site-#{n}.com"
   end
 
-  sequence :integer, aliases: [:position, :group, :order, :custom_flavor_position, :weight, :quantity] do |n|
+  sequence :integer, aliases: [:number] do |n|
     n
   end
 
