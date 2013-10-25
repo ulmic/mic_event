@@ -1,5 +1,7 @@
 class Member < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password
+  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password, :photo
+
+  mount_uploader :photo, PhotoUploader
 
   has_many :checkins, dependent: :destroy
 

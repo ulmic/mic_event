@@ -6,6 +6,14 @@
     = f.input :number
     = f.input :email
     = f.input :password
+    - if @member and @member.photo
+      = image_tag @member.photo.thumb, class: 'img-polaroid'
+      %br
+      %br
+      %b
+        = t '.choose_new_photo'
+      %br
+      = f.file_field :photo
   .form-actions
     = f.button :submit, class: 'btn-primary'
     = link_to t('.cancel', default: t("helpers.links.cancel")), members_path, class: 'btn'
