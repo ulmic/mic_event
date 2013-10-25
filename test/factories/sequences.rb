@@ -21,7 +21,7 @@ FactoryGirl.define do
     "http://site-#{n}.com"
   end
 
-  sequence :integer, aliases: [:position, :group, :order, :custom_flavor_position, :weight, :quantity] do |n|
+  sequence :integer, aliases: [:number] do |n|
     n
   end
 
@@ -41,7 +41,7 @@ FactoryGirl.define do
     "login#{n}"
   end
 
-  sequence :file do |n|
+  sequence :file, aliases: [:photo] do |n|
     fixture_file_upload('app/assets/images/logo.png', 'image/png')
   end
 

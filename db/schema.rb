@@ -69,9 +69,12 @@ ActiveRecord::Schema.define(:version => 20131017212356) do
     t.text     "first_name"
     t.text     "middle_name"
     t.text     "last_name"
+    t.string   "motto"
     t.integer  "number"
     t.string   "email"
     t.string   "password"
+    t.text     "photo"
+    t.text     "post"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

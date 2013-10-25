@@ -1,5 +1,15 @@
 class Member < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password
+  attr_accessible :first_name,
+                  :last_name,
+                  :middle_name,
+                  :number,
+                  :email,
+                  :password,
+                  :photo,
+                  :motto,
+                  :post
+
+  mount_uploader :photo, PhotoUploader
 
   has_many :checkins, dependent: :destroy
 
@@ -10,4 +20,5 @@ class Member < ActiveRecord::Base
   validates :email, presence: true,
                     email: true
   validates :password, presence: true
+  validates :motto, presence: true, length: { maximum: 140 }
 end

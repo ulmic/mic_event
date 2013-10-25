@@ -1,6 +1,7 @@
 ActiveAdmin.register Member do
   index do
     selectable_column
+    column :photo
     column :first_name
     column :middle_name
     column :number
@@ -15,6 +16,7 @@ ActiveAdmin.register Member do
       f.input :number
       f.input :email
       f.input :password
+      f.input :photo
     end
     f.actions
   end

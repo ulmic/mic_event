@@ -14,7 +14,8 @@ gem "twitter-bootstrap-rails"
 gem 'draper', '~> 1.0.0'
 gem 'jquery-rails'
 gem 'enumerize'
-
+gem 'carrierwave'
+gem 'rmagick'
 gem 'activeadmin'
 gem 'jquery-ui-rails'
 
@@ -27,7 +28,7 @@ end
 group :test do
   gem 'simplecov', require: false
   gem 'minitest'
-  gem "mocha", :require => false
+  gem "mocha", require: false
   gem 'factory_girl_rails', require: false
   gem 'turn'
   gem 'tconsole'
