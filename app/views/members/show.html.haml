@@ -1,3 +1,4 @@
+= stylesheet_link_tag "members"
 .page-header
   %h1= @member.fio
   %h2= @member.post
@@ -16,9 +17,21 @@
             = checkin.event.event_time
     %p
     = link_to t('back'), members_path, class: 'btn'
-  .span4
+  .span3
+    - if @member.parent
+      .row-fluid
+        %small
+          = t('parent')
+      .row-fluid.parrent{ onclick: "return location.href = '#{member_path(@member.parent)}'" }
+        .span3
+          = image_tag @member.parent.photo.thumb, class: 'img-rounded parrent'
+        .span3
+          %h4
+            = @member.parent.decorate.fio
+      %br
     .row-fluid
-      = image_tag @member.photo.big_thumb, class: 'img-polaroid'
+      .span12
+        = image_tag @member.photo, class: 'img-polaroid'
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
