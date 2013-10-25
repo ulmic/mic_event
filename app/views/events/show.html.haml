@@ -1,1 +1,2 @@
-%a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
+- unless current_member_checkined? @event
+  %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
