@@ -31,7 +31,12 @@
       %br
     .row-fluid
       .span12
-        = image_tag @member.photo, class: 'img-polaroid'
+        = image_tag @member.photo
+    %br
+    .row-fluid
+      - @member.children.each do |child|
+        .span3{ onclick: "return location.href = '#{member_path(child)}'" }
+          = image_tag child.photo.thumb, class: 'img-rounded'
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
