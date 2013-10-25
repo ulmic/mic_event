@@ -5,7 +5,10 @@
   .span7
     - @member.checkins.each do |checkin|
       = checkin.event.title
+      = checkin.status
       = checkin.description
+      = checkin.event.event_time
+      %hr
     %p
     = link_to t('back'), members_path, class: 'btn'
   .span5
