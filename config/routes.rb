@@ -1,8 +1,8 @@
 MicEvents::Application.routes.draw do
+  root to: "welcome#index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root to: "welcome#index"
   resources :places
   resources :users
   resources :members
