@@ -1,11 +1,21 @@
 = stylesheet_link_tag "events"
-= simple_form_for @event, html: { class: 'form-horizontal' } do |f|
+- if @event.errors.any?
+  #error_explanation
+    = "#{ pluralize(@event.errors.count, "error") } #{ t('.prohibited_this_event_from_being_saved') }:"
+    %ul
+    - @event.errors.full_messages.each do |msg|
+      %li= msg
+= simple_form_for @event  do |f|
   - f.with_options input_html: { class: :span6 } do |f|
-    = f.input :title
-    = f.input :description
-    = f.association :place, label_method: :title, value_method: :id
-    %a.btn{ href: new_place_path } Добавить место
-    = f.association :member, label_method: :first_name, value_method: :id
+    .field
+      = f.label :title,            class: :span6
+      = f.text_field :title,       class: :span6
+      = f.label :description,      class: :span6
+      = f.text_area :description, class: :span6
+      = f.association :place,      label_method: :title, value_method: :id
+      %a.btn{ href: new_place_path }
+        = t('.add_place')
+      = f.association :member,     label_method: :first_name, value_method: :id
     .form-actions
-      = f.button :submit, class: 'btn-primary'
+      = f.button :submit, class: 'btn btn-primary'
       = link_to t('.cancel', default: t("helpers.links.cancel")), events_path, class: 'btn'

@@ -1,0 +1,26 @@
+ru:
+  activerecord:
+    models:
+      member: Член МИЦ
+      event: Мероприятие
+    attributes:
+      member:
+        first_name:  Фамилия
+        middle_name: Имя
+        last_name:   Отчество
+        number:      Номер членского билета
+        email:       Email
+        password:    Пароль
+        photo:       Фото
+        motto:       Девиз по жизни
+        post:        Должность
+        parent:      Крёстный
+      event:
+        title: Название
+        description: Описание
+        event_time: Время проведения
+        place: Место
+        member: Ответственный
+      place:
+        title: Название
+        description: Описание

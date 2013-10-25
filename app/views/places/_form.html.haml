@@ -1,7 +1,15 @@
-= simple_form_for @place, html: { class: 'form-horizontal' } do |f|
-  - f.with_options input_html: { class: :span6 } do |f|
-    = f.input :title
-    = f.input :description
+- if @place.errors.any?
+  #error_explanation
+    = "#{ pluralize(@place.errors.count, "error") } #{ t('.prohibited_this_place_from_being_saved') }:"
+    %ul
+    - @place.errors.full_messages.each do |msg|
+      %li= msg
+= simple_form_for @place do |f|
+  .field
+    = f.label :title,           class: :span6
+    = f.text_field :title,      class: :span6
+    = f.label :description,     class: :span6
+    = f.text_area :description, class: :span6
   .form-actions
-    = f.button :submit, class: 'btn-primary'
-    = link_to t('.cancel', default: t("helpers.links.cancel")), places_path, class: 'btn'
+    = f.button :submit, t('add_place'), class: 'btn btn-primary'
+    = link_to t('cancel', default: t("helpers.links.cancel")), places_path, class: 'btn'

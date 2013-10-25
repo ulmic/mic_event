@@ -9,5 +9,6 @@ FactoryGirl.define do
     motto       { generate :string }
     photo
     post        { generate :string }
+    parent_id      1
   end
 end
