@@ -2,8 +2,9 @@
   %h1= @member.fio
 .row-fluid
   .span7
-    %p{ align: "justify" }
-      = @member.description
+    - @member.checkins.each do |checkin|
+      = checkin.event.title
+      = checkin.description
     %p
     = link_to t('back'), members_path, class: 'btn'
   .span5
@@ -11,7 +12,4 @@
       = image_tag @member.photo
     .row-fluid
       %h3= @member.motto
-.row-fluid
-  #vk_comments
-  :javascript
-    VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});
+      %h3= @member.number
