@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       member: Член МИЦ
+      event: Мероприятие
     attributes:
       member:
         first_name:  Фамилия
@@ -14,3 +15,9 @@ ru:
         motto:       Девиз по жизни
         post:        Должность
         parent:      Крёстный
+      event:
+        title: Название
+        description: Описание
+        event_time: Время проведения
+        place: Место
+        member: Ответственный

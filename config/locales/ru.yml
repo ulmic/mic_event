@@ -4,6 +4,12 @@ ru:
       registration: Регистрация
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
+  events:
+    new:
+      add_event: Добавить мероприятие
+    form:
+      prohibited_this_member_from_being_saved: Место не может быть создано
+      add_place: Добавить место
   date:
     formats:
       default: "%d.%m.%Y"
