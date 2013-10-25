@@ -71,6 +71,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not update member with render edit" do
+    member_sign_in @member
     attributes = attributes_for :member
     attributes[:first_name] = nil
     put :update, id: @member, member: attributes
