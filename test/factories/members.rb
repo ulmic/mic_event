@@ -6,5 +6,7 @@ FactoryGirl.define do
     number      { generate :integer }
     email "nat.mu@mail.ru"
     password "123"
+    motto { generate :string }
+    photo
   end
 end

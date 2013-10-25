@@ -41,7 +41,7 @@ FactoryGirl.define do
     "login#{n}"
   end
 
-  sequence :file do |n|
+  sequence :file, aliases: [:photo] do |n|
     fixture_file_upload('app/assets/images/logo.png', 'image/png')
   end
 

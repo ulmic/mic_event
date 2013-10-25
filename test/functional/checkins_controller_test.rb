@@ -76,6 +76,7 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should not update checkin with render edit" do
+    member_sign_in @member
     attributes = attributes_for :checkin
     attributes[:member_id] = nil
     put :update, id: @checkin, checkin: attributes

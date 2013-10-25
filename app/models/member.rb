@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password, :photo
+  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password, :photo, :motto
 
   mount_uploader :photo, PhotoUploader
 
@@ -12,4 +12,5 @@ class Member < ActiveRecord::Base
   validates :email, presence: true,
                     email: true
   validates :password, presence: true
+  validates :motto, presence: true, length: { maximum: 140 }
 end
