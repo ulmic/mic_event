@@ -18,6 +18,7 @@
       = f.text_field :post,        class: :span6
       = f.label :number,           class: :span6
       = f.number_field :number,    class: :span6, min: 1
+      = f.association :parent,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.number}" }, value_method: :id
       = f.label :motto,            class: :span6
       = f.text_field :motto,       class: :span6
       = f.label :email,            class: :span6
