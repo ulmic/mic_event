@@ -21,3 +21,6 @@ ru:
         event_time: Время проведения
         place: Место
         member: Ответственный
+      place:
+        title: Название
+        description: Описание

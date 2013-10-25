@@ -8,8 +8,11 @@ ru:
     new:
       add_event: Добавить мероприятие
     form:
+      prohibited_this_member_from_being_saved: Мероприятие не может быть создано
+  places:
+    form:
       prohibited_this_member_from_being_saved: Место не может быть создано
-      add_place: Добавить место
+
   date:
     formats:
       default: "%d.%m.%Y"
@@ -32,6 +35,7 @@ ru:
   profile: профиль
   members: Члены Молодёжного инициативного центра
   parent:   Крёстный
+  add_place: Добавить место
   date:
     abbr_day_names:
     - Вс
