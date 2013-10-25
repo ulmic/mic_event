@@ -1,5 +1,13 @@
 class Member < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :middle_name, :number, :email, :password, :photo, :motto
+  attr_accessible :first_name,
+                  :last_name,
+                  :middle_name,
+                  :number,
+                  :email,
+                  :password,
+                  :photo,
+                  :motto,
+                  :post
 
   mount_uploader :photo, PhotoUploader
 

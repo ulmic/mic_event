@@ -9,6 +9,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.text :photo
+      t.text :post
 
       t.timestamps
     end
