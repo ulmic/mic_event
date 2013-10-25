@@ -1,15 +1,9 @@
 ru:
-  save: Сохранить
-  edit: Изменить
-  cancel: Отмена
-  mandatory attributes: отмечены обязательные для заполнения аттрибуты
   members:
     new:
       registration: Регистрация
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
-    edit:
-      profile: профиль
   date:
     formats:
       default: "%d.%m.%Y"
@@ -24,6 +18,13 @@ ru:
           attributes:
             email:
               blank: "Email не может быть пустым."
+  save: Сохранить
+  edit: Изменить
+  cancel: Отмена
+  back: Назад
+  mandatory attributes: отмечены обязательные для заполнения аттрибуты
+  profile: профиль
+  members: Члены Молодёжного инициативного центра
   date:
     abbr_day_names:
     - Вс

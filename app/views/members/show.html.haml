@@ -2,18 +2,27 @@
   %h1= @member.fio
   %h2= @member.post
 .row-fluid
-  .span7
-    - @member.checkins.each do |checkin|
-      = checkin.event.title
-      = checkin.status
-      = checkin.description
-      = checkin.event.event_time
-      %hr
+  .span8
+    %table.table.table-striped.table-hover
+      - @member.checkins.each do |checkin|
+        %tr{ onclick: "return location.href = '#{event_path(checkin.event)}'" }
+          %td
+            =link_to checkin.event.title, event_path(checkin.event)
+          %td
+            = checkin.status
+          %td
+            = checkin.description
+          %td
+            = checkin.event.event_time
     %p
     = link_to t('back'), members_path, class: 'btn'
-  .span5
+  .span4
     .row-fluid
-      = image_tag @member.photo
+      = image_tag @member.photo.big_thumb, class: 'img-polaroid'
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
+    - if member_signed_in?
+      %a.btn{ href: edit_member_path(@member) }
+        = t('edit')
+        = t('profile')

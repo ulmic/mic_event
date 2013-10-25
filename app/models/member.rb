@@ -12,6 +12,10 @@ class Member < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   has_many :checkins, dependent: :destroy
+  has_many :children, class_name: "Member",
+                      foreign_key: "parent_id"
+
+  belongs_to :parent, class_name: "Member"
 
   validates :first_name, presence: true
   validates :last_name, presence: true
