@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :check_member_sign, except: [ :index, :show, :new, :create ]
 
   def index
-    @members = Member.all.reverse
+    @members = MemberDecorator.decorate_collection Member.all.shuffle!
   end
 
   def show
