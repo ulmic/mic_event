@@ -12,9 +12,5 @@ MicEvents::Application.routes.draw do
     end
   end
   resource :welcome, only: :index
-  resources :session do
-    member do
-      delete :destroy
-    end
-  end
+  resource :session
 end
