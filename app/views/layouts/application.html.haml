@@ -32,6 +32,9 @@
                       Выйти
                 - else
                   %li.pull-right
+                    %a{ href: new_member_path }
+                      = t('registration')
+                  %li.pull-right
                     %a{ href: new_session_path }
                       = t('auth')
     .jumbotron
