@@ -1,0 +1,6 @@
+ru:
+  enumerize:
+    checkin:
+      status:
+        organizer: Организатор
+        participant: Участник
