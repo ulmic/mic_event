@@ -41,6 +41,8 @@ ru:
   add_place: Добавить место
   auth: Войти
   wrong_login: Неверные логин или пароль
+  organizer: Организатор
+  participant: Участник
   date:
     abbr_day_names:
     - Вс
