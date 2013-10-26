@@ -20,6 +20,9 @@ ru:
     show:
       events_held_here: Мероприятие, прошедшие здесь
       people_were_here: Люди, которые здесь были
+  checkins:
+    form:
+      to_checkin: Зачекиниться
 
   date:
     formats:
@@ -39,6 +42,8 @@ ru:
   edit: Изменить
   cancel: Отмена
   back: Назад
+  destroy: Удалить
+  are_you_sure: Вы уверены?
   sign_out: Выйти
   mandatory attributes: отмечены обязательные для заполнения аттрибуты
   profile: профиль
@@ -50,6 +55,8 @@ ru:
   organizer: Организатор
   participant: Участник
   registration: Регистрация
+  you_are_checkined_here: Вы уже чекинились на этом мероприятии
+  you_already_have_account: У вас уже есть аккаунт
   date:
     abbr_day_names:
     - Вс
