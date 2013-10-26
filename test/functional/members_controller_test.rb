@@ -27,9 +27,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should show member" do
-    member_sign_in @member
-
-    get :show, id: @member
+    get :show, number: @member.number
     assert_response :success
   end
 

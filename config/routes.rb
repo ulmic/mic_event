@@ -5,7 +5,8 @@ MicEvents::Application.routes.draw do
 
   resources :places
   resources :users
-  resources :members
+  resources :members, except: :show
+  get ":number" => "members#show"
   resources :events do
     member do
       resources :checkins, except: :show

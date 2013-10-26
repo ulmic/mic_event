@@ -22,7 +22,6 @@ class CheckinsController < ApplicationController
     @checkin = Checkin.new params[:checkin]
     @checkin.event_id = params[:id]
     @checkin.member_id = current_member.id
-    binding.pry
     if @checkin.save
       redirect_to @checkin.event
     else
