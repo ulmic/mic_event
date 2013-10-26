@@ -56,6 +56,7 @@ ru:
   participant: Участник
   registration: Регистрация
   you_are_checkined_here: Вы уже чекинились на этом мероприятии
+  you_already_have_account: У вас уже есть аккаунт
   date:
     abbr_day_names:
     - Вс
