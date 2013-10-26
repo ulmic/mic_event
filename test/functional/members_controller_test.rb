@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'test_controller_helper'
 
 class MembersControllerTest < ActionController::TestCase
   setup do

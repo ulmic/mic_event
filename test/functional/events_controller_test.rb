@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'test_controller_helper'
 
 class EventsControllerTest < ActionController::TestCase
   setup do
