@@ -88,7 +88,6 @@ class EventsControllerTest < ActionController::TestCase
   test "should be current member checkined on current event" do
     checkin = create :checkin
     member_sign_in checkin.member
-    binding.pry
     assert_equal checkin, current_member_checkined?(checkin.event)
   end
 end
