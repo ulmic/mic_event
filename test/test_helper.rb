@@ -15,6 +15,5 @@ FactoryGirl.reload
 
 class ActiveSupport::TestCase
   include AuthHelper
-  include Devise::TestHelpers
   include FactoryGirl::Syntax::Methods
 end

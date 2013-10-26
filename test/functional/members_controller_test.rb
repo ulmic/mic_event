@@ -40,6 +40,13 @@ class MembersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get edit member with not access" do
+    member_sign_out
+
+    get :edit, id: @member
+    assert_redirected_to '/404'
+  end
+
   test "should update member" do
     member_sign_in @member
 
