@@ -13,6 +13,7 @@ ru:
     show:
       checkined_here: Здесь отметились
       location: Место проведения
+      responsible: Ответственный
   places:
     form:
       prohibited_this_member_from_being_saved: Место не может быть создано
