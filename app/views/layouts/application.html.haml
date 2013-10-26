@@ -20,10 +20,14 @@
                 %li
                   %a{ href: members_path }
                     Команда МИЦ
-            .nav-collapse.collapse
-              %a.btn.btn-primary{ href: new_session_path }
-                Войти
-
+                - if member_signed_in?
+                  %li
+                    %a{ href: member_path(current_member) }
+                      Мой профиль
+                - else
+                  %li
+                    %a.btn.btn-primary{ href: new_session_path }
+                      Войти
     .jumbotron
       = yield
 

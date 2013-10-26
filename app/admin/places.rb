@@ -1,5 +1,6 @@
 ActiveAdmin.register Place do
   index do
+    selectable_column
     column :description
     column :title
   end

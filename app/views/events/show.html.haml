@@ -1,2 +1,6 @@
+%h1
+  = @event.title
+%hr
+  = @event.description
 - unless current_member_checkined? @event
   %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
