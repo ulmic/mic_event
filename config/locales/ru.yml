@@ -43,6 +43,7 @@ ru:
   wrong_login: Неверные логин или пароль
   organizer: Организатор
   participant: Участник
+  registration: Регистрация
   date:
     abbr_day_names:
     - Вс
