@@ -9,6 +9,7 @@ ru:
       add_event: Добавить мероприятие
     form:
       prohibited_this_member_from_being_saved: Мероприятие не может быть создано
+      add_place: Добавить место
     show:
       checkined_here: Здесь отметились
   places:
