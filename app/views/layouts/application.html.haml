@@ -25,15 +25,17 @@
                     %a{ href: member_path(current_member) }
                       Мой профиль
                   %li
-                    %a{ href: session_path, method: :delete }
+                    %a{ "data-method" => "delete", href: session_path,}
                       Выйти
                 - else
                   %li
-                    %a.btn.btn-primary{ href: new_session_path }
+                    %a{ href: new_session_path }
                       Войти
     .jumbotron
       = yield
 
     = render "layouts/footer"
     = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
     = stylesheet_link_tag "bootstrap_and_overrides"
