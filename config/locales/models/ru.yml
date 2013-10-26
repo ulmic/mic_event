@@ -3,6 +3,7 @@ ru:
     models:
       member: Член МИЦ
       event: Мероприятие
+      checkin: Чекин
     attributes:
       member:
         first_name:  Фамилия
@@ -21,9 +22,10 @@ ru:
         event_time: Время проведения
         place: Место
         member: Ответственный
-        status:
-          organizer: Организатор
-          participant: Участник
       place:
         title: Название
         description: Описание
+      checkin:
+        status:
+          organizer: Орг
+          participant: Участник
