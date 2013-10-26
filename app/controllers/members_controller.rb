@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.find(params[:id]).decorate
+    @member = Member.find_by_number(params[:number]).decorate
   end
 
   def new
