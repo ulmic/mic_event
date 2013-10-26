@@ -6,10 +6,8 @@
       %li= msg
 = simple_form_for @place do |f|
   .field
-    = f.label :title,           class: :span6
-    = f.text_field :title,      class: :span6
-    = f.label :description,     class: :span6
-    = f.text_area :description, class: :span6
+    = f.input :title,        class: :span6
+    = f.input :description,        class: :span6
   .form-actions
     = f.button :submit, t('add_place'), class: 'btn btn-primary'
     = link_to t('cancel', default: t("helpers.links.cancel")), places_path, class: 'btn'
