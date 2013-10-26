@@ -32,7 +32,7 @@ class CheckinsController < ApplicationController
   def update
     @checkin = Checkin.find params[:id]
     if @checkin.update_attributes params[:checkin]
-      redirect_to @checkin
+      redirect_to @checkin.member
     else
       render action: :edit
     end
@@ -40,7 +40,8 @@ class CheckinsController < ApplicationController
 
   def destroy
     @checkin = Checkin.find params[:id]
+    member = @checkin.member
     @checkin.destroy
-    redirect_to checkins_path
+    redirect_to @member
   end
 end

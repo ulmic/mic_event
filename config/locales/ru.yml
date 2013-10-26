@@ -43,6 +43,7 @@ ru:
   cancel: Отмена
   back: Назад
   destroy: Удалить
+  are_you_sure: Вы уверены?
   sign_out: Выйти
   mandatory attributes: отмечены обязательные для заполнения аттрибуты
   profile: профиль
