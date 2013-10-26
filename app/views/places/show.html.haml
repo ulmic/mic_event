@@ -1,17 +1,23 @@
-- model_class = Place
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
-
-%p
-  %strong= model_class.human_attribute_name(:title) + ':'
-  %br
+%h1
   = @place.title
-%p
-  %strong= model_class.human_attribute_name(:description) + ':'
-  %br
+%hr
   = @place.description
+%hr
+= t('.events_held_here')
+%br
+%table.table.table-stripped
+  - @place.events.reverse.each do |event|
+    %tr{ onclick: "return location.href='#{event_path(event)}'" }
+      %td
+        %h4
+          = event.title
+      %td
+        %h5
+          = event.decorate.date
+%hr
+= t('.people_were_here')
+- @place.decorate.people.each do |member|
+  %a{ href: member_path(member) }
+    .mini-thumb
+      = image_tag member.photo.thumb, class: 'img-rounded'
 
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), places_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_place_path(@place), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), place_path(@place), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
