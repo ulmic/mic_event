@@ -8,8 +8,10 @@
 = simple_form_for @event  do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
-      = f.input :title, class: :span6
-      = f.input :description, class: :span6
+      = f.label :title,            class: :span6
+      = f.text_field :title,       class: :span6
+      = f.label :description,      class: :span6
+      = f.text_area :description, class: :span6
       = f.association :place,      label_method: :title, value_method: :id
       %a.btn{ href: new_place_path }
         = t('.add_place')

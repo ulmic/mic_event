@@ -8,15 +8,23 @@
 = simple_form_for @member do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
-      = f.input :first_name,  class: :span6
-      = f.input :title,       class: :span6
-      = f.input :middle_name, class: :span6
-      = f.input :last_name,   class: :span6
-      = f.input :post,        class: :span6
-      = f.input :number,      class: :span6
-      = f.input :email,       class: :span6
-      = f.input :password,    class: :span6
+      = f.label :first_name,       class: :span6
+      = f.text_field :first_name,  class: :span6
+      = f.label :middle_name,      class: :span6
+      = f.text_field :middle_name, class: :span6
+      = f.label :last_name,        class: :span6
+      = f.text_field :last_name,   class: :span6
+      = f.label :post,             class: :span6
+      = f.text_field :post,        class: :span6
+      = f.label :number,           class: :span6
+      = f.number_field :number,    class: :span6, min: 1
       = f.association :parent,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.number}" }, value_method: :id
+      = f.label :motto,            class: :span6
+      = f.text_field :motto,       class: :span6
+      = f.label :email,            class: :span6
+      = f.text_field :email,       class: :span6
+      = f.label :password,         class: :span6
+      = f.text_field :password,    class: :span6, type: :password
       = f.label :photo,            class: :span6
       - if @member and @member.photo
         = image_tag @member.photo.thumb, class: 'img-polaroid'
