@@ -1,6 +1,9 @@
 = stylesheet_link_tag "events"
 %h1
   = @event.title
+%h3
+  %a{ href: place_path(@event.place) }
+    = @event.place.title
 %hr
   = @event.description
 - unless current_member_checkined? @event
