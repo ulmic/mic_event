@@ -13,7 +13,7 @@ MicEvents::Application.routes.draw do
   end
   resource :welcome, only: :index
   resources :session do
-    collection do
+    member do
       delete :destroy
     end
   end

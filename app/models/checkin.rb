@@ -8,7 +8,7 @@ class Checkin < ActiveRecord::Base
 
   enumerize :status, in: [:organizer,
                           :participant],
-                          default: :organizer
+                          default: :participant
 
   belongs_to :member
   belongs_to :event
