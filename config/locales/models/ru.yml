@@ -26,7 +26,3 @@ ru:
       place:
         title: Название
         description: Описание
-      checkin:
-        status:
-          organizer: Орг
-          participant: Участник
