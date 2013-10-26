@@ -20,10 +20,11 @@ class CheckinsController < ApplicationController
 
   def create
     @checkin = Checkin.new params[:checkin]
-    @checkin.event = @event
+    @checkin.event_id = params[:id]
     @checkin.member_id = current_member.id
+    binding.pry
     if @checkin.save
-      redirect_to @event
+      redirect_to @checkin.event
     else
       render action: :new
     end
@@ -42,6 +43,6 @@ class CheckinsController < ApplicationController
     @checkin = Checkin.find params[:id]
     member = @checkin.member
     @checkin.destroy
-    redirect_to @member
+    redirect_to member
   end
 end
