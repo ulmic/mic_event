@@ -25,7 +25,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new params[:member]
     if @member.save
-      redirect_to @member
+      redirect_to new_session_path
     else
       render action: :new
     end
