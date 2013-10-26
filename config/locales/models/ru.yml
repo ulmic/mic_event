@@ -19,7 +19,8 @@ ru:
       event:
         title: Название
         description: Описание
-        event_time: Время проведения
+        begin_time: Дата и время начала мероприятия
+        end_time: Дата и время окончания мероприятия
         place: Место
         member: Ответственный
       place:

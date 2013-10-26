@@ -12,7 +12,8 @@
       = f.text_field :title,       class: :span6
       = f.label :description,      class: :span6
       = f.text_area :description, class: :span6
-      = f.input :event_time
+      = f.datetime_select :begin_datetime
+      = f.datetime_select :end_datetime
       = f.association :place,      label_method: :title, value_method: :id
       %a.btn{ href: new_place_path }
         = t('.add_place')
