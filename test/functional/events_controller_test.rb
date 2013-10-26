@@ -82,4 +82,13 @@ class EventsControllerTest < ActionController::TestCase
     put :update, id: @event, event: attributes
     assert_template :edit
   end
+
+  include EventsHelper
+
+  test "should be current member checkined on current event" do
+    checkin = create :checkin
+    member_sign_in checkin.member
+    binding.pry
+    assert_equal checkin, current_member_checkined?(checkin.event)
+  end
 end
