@@ -1,9 +1,6 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def new
     @member = Member.new
-    @member = Member.first
-    member_sign_in @member
-    redirect_to root_path
   end
 
   def create
