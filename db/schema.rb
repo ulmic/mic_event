@@ -60,9 +60,10 @@ ActiveRecord::Schema.define(:version => 20131025024453) do
     t.text     "description"
     t.integer  "member_id"
     t.integer  "place_id"
-    t.date     "event_time"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "begin_datetime"
+    t.datetime "end_datetime"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "members", :force => true do |t|

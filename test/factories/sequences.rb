@@ -1,7 +1,7 @@
 include ActionDispatch::TestProcess
 
 FactoryGirl.define do
-  sequence :date do |n|
+  sequence :date, aliases: [:datetime] do |n|
     DateTime.now
   end
 

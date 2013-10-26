@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :description,
-                  :event_time,
+                  :begin_datetime,
+                  :end_datetime,
                   :member_id,
                   :place_id,
                   :title
@@ -13,4 +14,6 @@ class Event < ActiveRecord::Base
   validates :place_id, presence: true
   validates :title, presence: true
   validates :member_id, presence: true
+  validates :begin_datetime, presence: true
+  validates :end_datetime, presence: true
 end

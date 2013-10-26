@@ -3,7 +3,8 @@ ActiveAdmin.register Event do
     selectable_column
     column :title
     column :description
-    column :event_time
+    column :begin_datetime
+    column :end_datetime
     column :member
     column :place
   end
@@ -11,7 +12,8 @@ ActiveAdmin.register Event do
     f.inputs "Details" do
       f.input :title
       f.input :description
-      f.input :event_time
+      f.input :begin_datetime
+      f.input :end_datetime
       f.input :member
       f.input :place
     end
