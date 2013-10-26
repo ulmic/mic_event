@@ -26,6 +26,7 @@ class Member < ActiveRecord::Base
   validates :email, presence: true,
                     email: true,
                     uniqueness: true
-  validates :password, presence: true
+  validates :password, presence: true,
+                       length: { minimum: 8, maximum: 16 }
   validates :motto, presence: true, length: { maximum: 140 }
 end

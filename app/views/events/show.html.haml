@@ -1,12 +1,26 @@
-= stylesheet_link_tag "events"
-%h1
-  = @event.title
+.row-fluid
+  .span4
+    %h1
+      = @event.title
+  .span4
+    %h3
+      %a{ href: place_path(@event.place) }
+        = @event.place.title
+  .span2
+    .row
+      %a{ href: member_path(@event.member) }
+        = t('.responsible')
+        .mini-thumb
+          = image_tag @event.member.photo.thumb, class: 'img-rounded'
 %hr
+.row-fluid
   = @event.description
 - unless current_member_checkined? @event
   %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
 %hr
+.row-fluid
 = t('.checkined_here')
+%br
 %br
 - @event.checkins.shuffle!.each do |checkin|
   %a{ href: member_path(checkin.member) }

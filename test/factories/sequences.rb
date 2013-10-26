@@ -1,7 +1,7 @@
 include ActionDispatch::TestProcess
 
 FactoryGirl.define do
-  sequence :date do |n|
+  sequence :date, aliases: [:datetime] do |n|
     DateTime.now
   end
 
@@ -14,7 +14,7 @@ FactoryGirl.define do
   end
 
   sequence :password do |n|
-    "#{n}pass#{n}"
+    "#{n}password#{n}"
   end
 
   sequence :site, aliases: [:shop_site, :url] do |n|

@@ -10,6 +10,8 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
+            %a.brand{ href: "http://ulmic.ru" }
+              .logo-mic
             %a.brand{ href: root_path }
               Этажи Роста МИЦ
             .nav-collapse.collapse
@@ -21,17 +23,22 @@
                   %a{ href: members_path }
                     Команда МИЦ
                 - if member_signed_in?
-                  %li
+                  %li.divider-vertical
+                  %li.pull-right
                     %a{ href: member_path(current_member) }
                       Мой профиль
-                  %li
+                  %li.pull-right
                     %a{ "data-method" => "delete", href: session_path,}
                       Выйти
                 - else
-                  %li
+                  %li.pull-right
+                    %a{ href: new_member_path }
+                      = t('registration')
+                  %li.pull-right
                     %a{ href: new_session_path }
                       = t('auth')
     .jumbotron
+      = flash[:notice]
       = yield
 
     = render "layouts/footer"

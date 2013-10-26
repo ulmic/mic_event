@@ -8,7 +8,7 @@ MicEvents::Application.routes.draw do
   resources :members
   resources :events do
     member do
-      resources :checkins
+      resources :checkins, except: :show
     end
   end
   resource :welcome, only: :index

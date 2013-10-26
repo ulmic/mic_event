@@ -21,7 +21,6 @@ class CheckinsControllerTest < ActionController::TestCase
 
   test "should create checkin" do
     member_sign_in @member
-
     attributes = attributes_for :checkin
     attributes[:member_id] = @member.id
     post :create, id: @event, checkin: attributes
@@ -29,13 +28,6 @@ class CheckinsControllerTest < ActionController::TestCase
 
     @checkin = Checkin.last
     assert_equal attributes[:description], @checkin.description
-  end
-
-  test "should show checkin" do
-    member_sign_in @member
-
-    get :show, id: @checkin
-    assert_response :success
   end
 
   test "should get edit checkin" do
@@ -57,13 +49,14 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should destroy checkin" do
-    member_sign_in @member
+    member = @checkin.member
+    member_sign_in member
 
     assert_difference('Checkin.count', -1) do
       delete :destroy, id: @checkin
     end
 
-    assert_redirected_to checkins_path
+    assert_redirected_to member
   end
 
   test "should not create checkin with render new" do

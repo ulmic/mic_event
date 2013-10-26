@@ -9,11 +9,20 @@ ru:
       add_event: Добавить мероприятие
     form:
       prohibited_this_member_from_being_saved: Мероприятие не может быть создано
+      add_place: Добавить место
     show:
       checkined_here: Здесь отметились
+      location: Место проведения
+      responsible: Ответственный
   places:
     form:
       prohibited_this_member_from_being_saved: Место не может быть создано
+    show:
+      events_held_here: Мероприятие, прошедшие здесь
+      people_were_here: Люди, которые здесь были
+  checkins:
+    form:
+      to_checkin: Зачекиниться
 
   date:
     formats:
@@ -33,6 +42,8 @@ ru:
   edit: Изменить
   cancel: Отмена
   back: Назад
+  destroy: Удалить
+  are_you_sure: Вы уверены?
   sign_out: Выйти
   mandatory attributes: отмечены обязательные для заполнения аттрибуты
   profile: профиль
@@ -43,6 +54,9 @@ ru:
   wrong_login: Неверные логин или пароль
   organizer: Организатор
   participant: Участник
+  registration: Регистрация
+  you_are_checkined_here: Вы уже чекинились на этом мероприятии
+  you_already_have_account: У вас уже есть аккаунт
   date:
     abbr_day_names:
     - Вс
