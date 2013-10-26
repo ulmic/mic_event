@@ -9,6 +9,8 @@ ru:
       add_event: Добавить мероприятие
     form:
       prohibited_this_member_from_being_saved: Мероприятие не может быть создано
+    show:
+      checkined_here: Здесь отметились
   places:
     form:
       prohibited_this_member_from_being_saved: Место не может быть создано
@@ -37,6 +39,8 @@ ru:
   members: Члены Молодёжного инициативного центра
   parent:   Крёстный
   add_place: Добавить место
+  auth: Войти
+  wrong_login: Неверные логин или пароль
   date:
     abbr_day_names:
     - Вс
