@@ -27,7 +27,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should show member" do
-    get :show, number: @member
+    get :show, number: @member.number
     assert_response :success
   end
 
