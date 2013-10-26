@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       @member = Member.new params[:member]
-      flash.now[:error] = t('.wrong_login')
+      flash[:notice] = t('.wrong_login')
       render action: :new
     end
   end

@@ -38,6 +38,7 @@
                     %a{ href: new_session_path }
                       = t('auth')
     .jumbotron
+      = flash[:notice]
       = yield
 
     = render "layouts/footer"

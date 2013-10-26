@@ -1,16 +1,17 @@
 class CheckinsController < ApplicationController
-  before_filter :check_member_sign, except: [ :index, :show ]
-
+  before_filter :check_member_sign, except: :index
   def index
     @checkins = Checkin.all.reverse
   end
-
-  def show
-    @checkin = Checkin.find params[:id]
-  end
-
+  include EventsHelper
   def new
-    @checkin = Checkin.new
+    @event = Event.find params[:id]
+    unless current_member_checkined?(@event)
+      @checkin = Checkin.new
+    else
+      flash[:notice] = t('you_are_checkined_here')
+      redirect_to @event
+    end
   end
 
   def edit
@@ -19,10 +20,10 @@ class CheckinsController < ApplicationController
 
   def create
     @checkin = Checkin.new params[:checkin]
-    @checkin.event_id = params[:id]
+    @checkin.event = @event
     @checkin.member_id = current_member.id
     if @checkin.save
-      redirect_to @checkin
+      redirect_to @event
     else
       render action: :new
     end

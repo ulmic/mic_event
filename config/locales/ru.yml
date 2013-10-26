@@ -20,6 +20,9 @@ ru:
     show:
       events_held_here: Мероприятие, прошедшие здесь
       people_were_here: Люди, которые здесь были
+  checkins:
+    form:
+      to_checkin: Зачекиниться
 
   date:
     formats:
@@ -50,6 +53,7 @@ ru:
   organizer: Организатор
   participant: Участник
   registration: Регистрация
+  you_are_checkined_here: Вы уже чекинились на этом мероприятии
   date:
     abbr_day_names:
     - Вс

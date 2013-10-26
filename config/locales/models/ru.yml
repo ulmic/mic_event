@@ -26,3 +26,6 @@ ru:
       place:
         title: Название
         description: Описание
+      checkin:
+        description: Описание
+        status: Организатор
