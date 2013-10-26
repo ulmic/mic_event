@@ -25,3 +25,4 @@ config/initializers/secret_token.rb
 *.swo
 *.swn
 *.swp
+*.swm
