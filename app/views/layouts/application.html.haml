@@ -24,6 +24,9 @@
                   %li
                     %a{ href: member_path(current_member) }
                       Мой профиль
+                  %li
+                    %a{ href: session_path, method: :delete }
+                      Выйти
                 - else
                   %li
                     %a.btn.btn-primary{ href: new_session_path }

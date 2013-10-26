@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SessionControllerTest < ActionController::TestCase
+class SessionsControllerTest < ActionController::TestCase
   def setup
     @member = create :member
   end
