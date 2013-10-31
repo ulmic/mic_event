@@ -4,9 +4,6 @@ MicEvents::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :places
-  resources :users
-  resources :members, except: :show
-  get ":number" => "members#show"
   resources :events do
     member do
       resources :checkins, except: :show
@@ -14,4 +11,7 @@ MicEvents::Application.routes.draw do
   end
   resource :welcome, only: :index
   resource :session, only: [ :new, :create, :destroy ]
+  resources :users
+  resources :members, except: :show
+  get ":number" => "members#show"
 end
