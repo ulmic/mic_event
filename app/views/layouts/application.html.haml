@@ -22,8 +22,8 @@
                 %li
                   %a{ href: members_path }
                     Команда МИЦ
+                %li.divider-vertical
                 - if member_signed_in?
-                  %li.divider-vertical
                   %li.pull-right
                     %a{ href: member_path(current_member) }
                       Мой профиль
