@@ -1,7 +1,17 @@
-%table.table-striped
-  - @events.each do |event|
-    %tr
-      %td
-        = event.title
-
-
+- @events.each do |event|
+  .row-fluid
+    .span4{ onclick: "return location.href = '#{event_path(event)}'" }
+      = image_tag "event.png"
+    .span8
+      .row-fluid
+        .span8
+          %h2
+            = event.title
+        .span4.member-link{ onclick: "return location.href = '/#{event.member.number}'" }
+          .span3
+            = image_tag event.member.photo.thumb, class: "img-rounded"
+          .span9
+            %b
+              = event.member.decorate.fio
+      .row-fluid
+        = event.description
