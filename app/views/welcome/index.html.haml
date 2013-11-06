@@ -1,8 +1,9 @@
+= stylesheet_link_tag :welcome
 .span12
   - @events.each do |event|
     .row-fluid
       .span4
-        = image_tag event.member.photo.big_thumb
+        = image_tag event.program.logo, class: 'big_logo'
       .span8
         .row-fluid
           %h1

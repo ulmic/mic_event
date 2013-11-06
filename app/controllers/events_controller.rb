@@ -19,7 +19,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new params[:event]
-    binding.pry
     if @event.save
       redirect_to @event
     else
