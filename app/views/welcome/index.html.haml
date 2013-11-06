@@ -1,7 +1,13 @@
-%table.table-striped
+.span12
   - @events.each do |event|
-    %tr
-      %td
-        = event.title
-
+    .row-fluid
+      .span4
+        = image_tag event.member.photo.big_thumb
+      .span8
+        .row-fluid
+          %h1
+            = event.title
+        .row-fluid
+          = event.description
+    %hr
 
