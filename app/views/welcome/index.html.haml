@@ -2,13 +2,14 @@
 .span12
   - @events.each do |event|
     .row-fluid
-      .span4
-        %a{ href: events_path(event) }
+      .span3
+        %a{ href: event_path(event) }
           = image_tag event.program.logo, class: 'big_logo'
       .span8
         .row-fluid
-          %h1
-            = event.title
+          %a{ href: event_path(event) }
+            %h1
+              = event.title
         .row-fluid
           = event.description
         .row-fluid
