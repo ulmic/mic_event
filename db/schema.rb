@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20131106224147) do
     t.integer  "place_id"
     t.datetime "begin_datetime"
     t.datetime "end_datetime"
+    t.integer  "program_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20131106224147) do
     t.text     "name"
     t.integer  "lider_id"
     t.text     "description"
+    t.text     "logo"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
