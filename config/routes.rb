@@ -14,4 +14,5 @@ MicEvents::Application.routes.draw do
   resources :users
   resources :members, except: :show
   get ":number" => "members#show"
+  resources :programs
 end

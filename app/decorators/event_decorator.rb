@@ -8,4 +8,12 @@ class EventDecorator < Draper::Decorator
       "#{model.begin_datetime.to_date} - #{model.end_datetime.to_date}"
     end
   end
+
+  def people
+    people = []
+    model.checkins.each do |checkin|
+      people.push(checkin.member)
+    end
+    people
+  end
 end

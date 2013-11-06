@@ -4,10 +4,12 @@ class Event < ActiveRecord::Base
                   :end_datetime,
                   :member_id,
                   :place_id,
-                  :title
+                  :title,
+                  :program_id
 
   belongs_to :member
   belongs_to :place
+  belongs_to :program
   has_many :checkins
 
   validates :description, presence: true
@@ -16,4 +18,5 @@ class Event < ActiveRecord::Base
   validates :member_id, presence: true
   validates :begin_datetime, presence: true
   validates :end_datetime, presence: true
+  validates :program_id, presence: true
 end
