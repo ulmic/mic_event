@@ -3,12 +3,18 @@
   - @events.each do |event|
     .row-fluid
       .span4
-        = image_tag event.program.logo, class: 'big_logo'
+        %a{ href: events_path(event) }
+          = image_tag event.program.logo, class: 'big_logo'
       .span8
         .row-fluid
           %h1
             = event.title
         .row-fluid
           = event.description
+        .row-fluid
+          - event.decorate.people.each do |member|
+            .span1
+              %a{ href: member_path(member) }
+                = image_tag member.photo.thumb, class: 'img-rounded'
     %hr
 
