@@ -6,5 +6,6 @@ FactoryGirl.define do
     place
     begin_datetime  { generate :datetime }
     end_datetime    { generate :datetime }
+    program_id 1
   end
 end

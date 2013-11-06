@@ -1,17 +1,20 @@
-- @events.each do |event|
-  .row-fluid
-    .span4{ onclick: "return location.href = '#{event_path(event)}'" }
-      = image_tag "event.png"
-    .span8
-      .row-fluid
-        .span8
-          %h2
-            = event.title
-        .span4.member-link{ onclick: "return location.href = '/#{event.member.number}'" }
-          .span3
-            = image_tag event.member.photo.thumb, class: "img-rounded"
-          .span9
-            %b
-              = event.member.decorate.fio
-      .row-fluid
-        = event.description
+= stylesheet_link_tag :welcome
+.span12
+  - @events.each do |event|
+    .row-fluid
+      .span3
+        %a{ href: event_path(event) }
+          = image_tag event.program.logo, class: 'big_logo'
+      .span8
+        .row-fluid
+          %a{ href: event_path(event) }
+            %h1
+              = event.title
+        .row-fluid
+          = event.description
+        .row-fluid
+          - event.decorate.people.each do |member|
+            .span1
+              %a{ href: member_path(member) }
+                = image_tag member.photo.thumb, class: 'img-rounded'
+    %hr

@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :place_id
       t.datetime :begin_datetime
       t.datetime :end_datetime
+      t.integer :program_id
 
       t.timestamps
     end

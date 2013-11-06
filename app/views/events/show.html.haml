@@ -8,7 +8,7 @@
         = @event.place.title
   .span2
     .row
-      %a{ href: member_path(@event.member) }
+      %a{ href: "/#{@event.member.number}" }
         = t('.responsible')
         .mini-thumb
           = image_tag @event.member.photo.thumb, class: 'img-rounded'
