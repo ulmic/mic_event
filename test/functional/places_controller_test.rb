@@ -45,7 +45,7 @@ class PlacesControllerTest < ActionController::TestCase
   test "should show place with event_date at different days" do
     event = create :event
     event.place = @place
-    event.begin_datetime = event.end_datetime - 1.day
+    event.begin_datetime = event.end_datetime + 1.day
     @place.events.push event
 
     get :show, id: @place

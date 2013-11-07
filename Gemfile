@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'therubyracer'
 gem "ckeditor"
 gem 'validates'
+gem 'date_validator'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'draper', '~> 1.0.0'

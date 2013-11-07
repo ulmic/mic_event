@@ -29,3 +29,9 @@ ru:
       checkin:
         description: Описание
         status: Организатор
+    errors:
+      models:
+        event:
+          attributes:
+            end_datetime:
+              after: должны быть позже начала мероприятия
