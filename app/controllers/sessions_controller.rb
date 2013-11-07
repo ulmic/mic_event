@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
     @member = Member.find_by_email params[:member][:email]
     if @member && authenticate_member?(@member, params[:member][:password])
       member_sign_in @member
-      #FIXME
-      redirect_to "/#{@member.number}"
+      redirect_to ticket_path(@member)
     else
       @member = Member.new params[:member]
       flash[:notice] = t('.wrong_login')
