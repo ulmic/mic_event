@@ -26,7 +26,7 @@
       .row-fluid
         %small
           = t('parent')
-      .row-fluid.member-link{ onclick: "return location.href = '/#{@member.parent.number}'" }
+      .row-fluid.member-link{ onclick: "return location.href = '#{ticket_path(@member.parent)}'" }
         .span3
           = image_tag @member.parent.photo.thumb, class: 'img-rounded parrent'
         .span3
