@@ -15,6 +15,8 @@ capybara-*.html
 /db/*.sqlite3
 /public/system/*
 /public/uploads/*
+/public/assets/*
+/public/*.jpg
 /coverage/
 /spec/tmp/*
 **.orig

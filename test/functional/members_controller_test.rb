@@ -37,7 +37,7 @@ class MembersControllerTest < ActionController::TestCase
     member_sign_out
 
     get :edit, id: @member
-    assert_redirected_to '/404'
+    assert_redirected_to not_found_errors_path
   end
 
   test "should update member" do
