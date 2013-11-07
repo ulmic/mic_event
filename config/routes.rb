@@ -1,5 +1,6 @@
 MicEvents::Application.routes.draw do
   root to: "welcome#index"
+  match "/404", to: "errors#not_found"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
