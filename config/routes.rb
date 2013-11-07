@@ -9,7 +9,9 @@ MicEvents::Application.routes.draw do
   resource :welcome, only: :index
   resource :session, only: [ :new, :create, :destroy ]
   resources :users
-  resources :members, except: :show
+  resources :members, except: :show do
+    resources :admins, except: :show
+  end
   get ":number" => "tickets#show", as: "ticket"
   resources :programs
   resources :errors, only: [] do
@@ -17,5 +19,4 @@ MicEvents::Application.routes.draw do
       get :not_found
     end
   end
-  resources :admins, except: :show
 end
