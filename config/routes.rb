@@ -15,4 +15,9 @@ MicEvents::Application.routes.draw do
   resources :members, except: :show
   get ":number" => "tickets#show", as: "ticket"
   resources :programs
+  resources :errors, only: [] do
+    collection do
+      get :not_found
+    end
+  end
 end
