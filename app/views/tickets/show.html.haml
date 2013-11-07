@@ -39,7 +39,7 @@
     %br
     .row-fluid
       - @member.children.each do |child|
-        .span3{ onclick: "return location.href = '#{member_path(child)}'" }
+        .span3{ onclick: "return location.href = '#{ticket_path(child)}'" }
           = image_tag child.photo.thumb, class: 'img-rounded'
     .row-fluid
       %h3= @member.motto

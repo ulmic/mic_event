@@ -6,9 +6,9 @@
       %hr
     %li.span3.member_cell
       .thumbnail.height_thumbnail
-        %a{ href: "/#{member.number}" }
+        %a{ href: ticket_path(member) }
           = image_tag member.photo.big_thumb
         %h3= member.fio
         %p= member.post
         %br
-        %a.btn.btn-medium{ href: "/#{member.number}" } Подробнее
+        %a.btn.btn-medium{ href: ticket_path(member) } Подробнее
