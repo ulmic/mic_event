@@ -15,6 +15,6 @@
         .row-fluid
           - event.decorate.people.each do |member|
             .span1
-              %a{ href: member_path(member) }
+              %a{ href: ticket_path(member) }
                 = image_tag member.photo.thumb, class: 'img-rounded'
     %hr

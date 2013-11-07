@@ -8,7 +8,7 @@
         = @event.place.title
   .span2
     .row
-      %a{ href: "/#{@event.member.number}" }
+      %a{ href: ticket_path(@event.member) }
         = t('.responsible')
         .mini-thumb
           = image_tag @event.member.photo.thumb, class: 'img-rounded'
@@ -23,6 +23,6 @@
 %br
 %br
 - @event.checkins.shuffle!.each do |checkin|
-  %a{ href: member_path(checkin.member) }
+  %a{ href: ticket_path(checkin.member) }
     .mini-thumb
       = image_tag checkin.member.photo.thumb, class: 'img-rounded'
