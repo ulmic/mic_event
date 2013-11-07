@@ -15,6 +15,13 @@ class MembersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get new member" do
+    member_sign_in @member
+
+    get :new
+    assert_redirected_to root_path
+  end
+
   test "should create member" do
     member_sign_in @member
 
