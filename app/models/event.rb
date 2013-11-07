@@ -17,6 +17,6 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
   validates :member_id, presence: true
   validates :begin_datetime, presence: true
-  validates :end_datetime, presence: true
+  validates :end_datetime, presence: true, date: { after: :begin_datetime }
   validates :program_id, presence: true
 end

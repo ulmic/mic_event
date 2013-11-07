@@ -87,6 +87,8 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
+    date_validator (0.7.0)
+      activemodel (>= 3)
     debug_inspector (0.0.2)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 3.2.1)
   coveralls
+  date_validator
   draper (~> 1.0.0)
   enumerize
   factory_girl_rails
