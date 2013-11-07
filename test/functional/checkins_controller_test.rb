@@ -19,6 +19,18 @@ class CheckinsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get new checkin because already has an checkin" do
+    member_sign_in @member
+    checkin = create :checkin
+    checkin.member = @member
+    @member.checkins.push checkin
+    checkin.event = @event
+    @event.checkins.push checkin
+
+    get :new, id: @event
+    assert_redirected_to event_path @event
+  end
+
   test "should create checkin" do
     member_sign_in @member
     attributes = attributes_for :checkin
