@@ -17,4 +17,5 @@ MicEvents::Application.routes.draw do
       get :not_found
     end
   end
+  resources :admins, except: :show
 end
