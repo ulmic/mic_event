@@ -30,6 +30,13 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should show place" do
+    event = create :event
+    event.place = @place
+    @place.events.push event
+    checkin = create :checkin
+    checkin.event = event
+    event.checkins.push checkin
+
     get :show, id: @place
     assert_response :success
   end
