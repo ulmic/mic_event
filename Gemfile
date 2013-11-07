@@ -17,7 +17,6 @@ gem 'jquery-rails'
 gem 'enumerize'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'activeadmin'
 gem 'jquery-ui-rails'
 
 group :assets do

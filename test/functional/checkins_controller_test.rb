@@ -1,4 +1,4 @@
-require 'test_controller_helper'
+require 'test_helper'
 
 class CheckinsControllerTest < ActionController::TestCase
   setup do

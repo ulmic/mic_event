@@ -1,4 +1,4 @@
-require 'test_controller_helper'
+require 'test_helper'
 
 class PlacesControllerTest < ActionController::TestCase
   setup do
