@@ -25,7 +25,7 @@
                 %li.divider-vertical
                 - if member_signed_in?
                   %li.pull-right
-                    %a{ href: member_path(current_member) }
+                    %a{ href: ticket_path(current_member) }
                       Мой профиль
                   %li.pull-right
                     %a{ "data-method" => "delete", href: session_path,}

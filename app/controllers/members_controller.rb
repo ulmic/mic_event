@@ -5,10 +5,6 @@ class MembersController < ApplicationController
     @members = MemberDecorator.decorate_collection Member.all.shuffle!
   end
 
-  def show
-    @member = Member.find_by_number(params[:number]).decorate
-  end
-
   def new
     unless member_signed_in?
       @member = Member.new

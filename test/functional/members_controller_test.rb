@@ -26,11 +26,6 @@ class MembersControllerTest < ActionController::TestCase
     assert_equal attributes[:first_name], @member.first_name
   end
 
-  test "should show member" do
-    get :show, number: @member.number
-    assert_response :success
-  end
-
   test "should get edit member" do
     member_sign_in @member
 
