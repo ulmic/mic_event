@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def check_member_sign
     unless member_signed_in?
-      redirect_to '/404'
+      redirect_to not_found_errors_path
     end
   end
 
