@@ -44,9 +44,12 @@
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
-    - if current_member_on_page?(@member) or admin_signed_in?
-      %a.btn{ href: edit_member_path(@member) }
-        = t('edit')
-        = t('profile')
-    - if admin_signed_in?
-      %a.btn{ href: new_admin_path(@member) }
+    .row-fluid
+      - if current_member_on_page?(@member) or admin_signed_in?
+        %a.btn{ href: edit_member_path(@member) }
+          = t('edit')
+          = t('profile')
+      %br
+      - if admin_signed_in?
+        %a.btn{ href: new_admin_path(@member) }
+          = t('.make_an_admin')

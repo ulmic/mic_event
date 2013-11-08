@@ -1,6 +1,9 @@
 ru:
   page_not_found: "Страницы, которую вы ищете, просто не существует."
   error_404:      Ошибка 404
+  tickets:
+    show:
+      make_an_admin: Сделать администратором
   members:
     new:
       registration: Регистрация
