@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_filter :check_admin_sign_in, except: [ :index, :show ]
 
   def index
-    @places = Place.order(:id).page(params[:page]).decorate
+    @places = Kaminari.paginate_array(PlaceDecorator.decorate_collection(Place.all.reverse)).page(params[:page])
   end
 
   def show
