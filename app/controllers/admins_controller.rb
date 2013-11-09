@@ -7,6 +7,8 @@ class AdminsController < ApplicationController
 
   def new
     @admin = Admin.new
+    @member = Member.find params[:id]
+    @admin.member = @member
   end
 
   def edit
@@ -15,6 +17,7 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.new params[:admin]
+    @admin.member_id = params[:id]
     if @admin.save
       redirect_to root_path
     else
@@ -33,7 +36,8 @@ class AdminsController < ApplicationController
 
   def destroy
     @admin = Admin.find params[:id]
+    member = @admin.member
     @admin.destroy
-    redirect_to admins_path
+    redirect_to ticket_path(member)
   end
 end
