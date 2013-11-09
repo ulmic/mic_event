@@ -1,16 +1,31 @@
 .row-fluid
-  .span4.offset3{ name: "footer" }
-    %a{ href: "about" }
-      %h3= t('about')
-    %a{ href: "about" }
-      = t('.sky_dance_is')
+  .span4
+    .row
+      %a{ href: "http://vk.com/ulmic" }
+        = image_tag "social/vk.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://www.facebook.com/molcenter" }
+        = image_tag "social/facebook.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://twitter.com/ulmicru" }
+        = image_tag "social/twitter.png", class: ' span2 there_is_margin img-rounded'
+    .row
+      %a{ href: "https://plus.google.com/109518417712111969312/" }
+        = image_tag "social/gplus.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "http://www.youtube.com/user/ulmic73" }
+        = image_tag "social/youtube.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://github.com/ulmic" }
+        = image_tag "social/github.png", class: ' span2 there_is_margin img-rounded'
+
+  .span4{ name: "footer" }
+    %a{ href: about_welcome_path }
+      %h3= t('.about')
+    %a{ href: about_welcome_path }
+      = t('.ulmic_is')
     %br
   .span4
-    %a{ href: "about" }
-      %h3= t('contacts')
+    %a{ href: contacts_welcome_path }
+      %h3= t('.contacts')
     = t('.phone')
-    %h3 8 (8422) 70-02-28
-
+    %h3 8 (8422) 72-72-30
 = javascript_include_tag "js/jquery"
 = javascript_include_tag "js/bootstrap-transition"
 = javascript_include_tag "js/bootstrap-alert"
