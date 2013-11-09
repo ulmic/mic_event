@@ -18,6 +18,7 @@ gem 'enumerize'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-ui-rails'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
-    @members = MemberDecorator.decorate_collection Member.all.shuffle!
+    @members = Member.order(:id).page(params[:page]).decorate
   end
 
   def new
