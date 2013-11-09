@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
-    @members = Member.order(:id).page(params[:page]).decorate
+    @members = Kaminari.paginate_array(MemberDecorator.decorate_collection(Member.all.shuffle!)).page(params[:page])
   end
 
   def new
