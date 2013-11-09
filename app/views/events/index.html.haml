@@ -3,5 +3,6 @@
     %a{ href: event_path(event) }
       %tr
         = event.title
+= paginate @events
 .offset3.span4
   %a.btn{ href: new_event_path } Добавить мероприятие

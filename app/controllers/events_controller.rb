@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
-    @events = Event.all.reverse
+    @events = Event.order(:id).page(params[:page]).decorate
   end
 
   def show
