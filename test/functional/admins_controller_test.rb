@@ -23,6 +23,7 @@ class AdminsControllerTest < ActionController::TestCase
     member_sign_in @admin
 
     attributes = attributes_for :admin
+    attributes[:member_id] = @member.id
     post :create, id: @member, admin: attributes
     assert_response :redirect
 
@@ -41,6 +42,7 @@ class AdminsControllerTest < ActionController::TestCase
     member_sign_in @admin
 
     attributes = attributes_for :admin
+    attributes[:member_id] = @member.id
     put :update, id: @admin, admin: attributes
     assert_response :redirect
 
