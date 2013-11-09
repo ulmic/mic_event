@@ -1,13 +1,41 @@
-%script{:src => "js/jquery.js"}
-%script{:src => "js/bootstrap-transition.js"}
-%script{:src => "js/bootstrap-alert.js"}
-%script{:src => "js/bootstrap-modal.js"}
-%script{:src => "js/bootstrap-dropdown.js"}
-%script{:src => "js/bootstrap-scrollspy.js"}
-%script{:src => "js/bootstrap-tab.js"}
-%script{:src => "js/bootstrap-tooltip.js"}
-%script{:src => "js/bootstrap-popover.js"}
-%script{:src => "js/bootstrap-button.js"}
-%script{:src => "js/bootstrap-collapse.js"}
-%script{:src => "js/bootstrap-carousel.js"}
-%script{:src => "js/bootstrap-typeahead.js"}
+.row-fluid
+  .span4
+    .row
+      %a{ href: "http://vk.com/ulmic" }
+        = image_tag "social/vk.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://www.facebook.com/molcenter" }
+        = image_tag "social/facebook.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://twitter.com/ulmicru" }
+        = image_tag "social/twitter.png", class: ' span2 there_is_margin img-rounded'
+    .row
+      %a{ href: "https://plus.google.com/109518417712111969312/" }
+        = image_tag "social/gplus.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "http://www.youtube.com/user/ulmic73" }
+        = image_tag "social/youtube.png", class: ' span2 there_is_margin img-rounded'
+      %a{ href: "https://github.com/ulmic" }
+        = image_tag "social/github.png", class: ' span2 there_is_margin img-rounded'
+
+  .span4{ name: "footer" }
+    %a{ href: about_welcome_path }
+      %h3= t('.about')
+    %a{ href: about_welcome_path }
+      = t('.ulmic_is')
+    %br
+  .span4
+    %a{ href: contacts_welcome_path }
+      %h3= t('.contacts')
+    = t('.phone')
+    %h3 8 (8422) 72-72-30
+= javascript_include_tag "js/jquery"
+= javascript_include_tag "js/bootstrap-transition"
+= javascript_include_tag "js/bootstrap-alert"
+= javascript_include_tag "js/bootstrap-modal"
+= javascript_include_tag "js/bootstrap-dropdown"
+= javascript_include_tag "js/bootstrap-scrollspy"
+= javascript_include_tag "js/bootstrap-tab"
+= javascript_include_tag "js/bootstrap-tooltip"
+= javascript_include_tag "js/bootstrap-popover"
+= javascript_include_tag "js/bootstrap-button"
+= javascript_include_tag "js/bootstrap-collapse"
+= javascript_include_tag "js/bootstrap-carousel"
+= javascript_include_tag "js/bootstrap-typeahead"

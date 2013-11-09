@@ -6,7 +6,12 @@ MicEvents::Application.routes.draw do
       resources :checkins, except: :show
     end
   end
-  resource :welcome, only: :index
+  resource :welcome, only: :index do
+    collection do
+      get :about
+      get :contacts
+    end
+  end
   resource :session, only: [ :new, :create, :destroy ]
   resources :users
   resources :members, except: :show do

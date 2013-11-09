@@ -24,7 +24,7 @@ class MemberDecorator < Draper::Decorator
 
   def present_photo_big_thumb
     unless model.photo.blank?
-      model.photo
+      model.photo.big_thumb
     else
       user_pic
     end
@@ -32,7 +32,7 @@ class MemberDecorator < Draper::Decorator
 
   def present_photo_thumb
     unless model.photo.blank?
-      model.photo
+      model.photo.thumb
     else
       user_pic
     end
