@@ -1,4 +1,4 @@
-class EventDecorator < Draper::Decorator
+class EventDecorator < ApplicationDecorator
   delegate_all
 
   def date

@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
-  before_filter :check_member_sign_in, except: [ :index, :show ]
+  before_filter :check_admin_sign_in, except: [ :index, :show ]
 
   def index
-    @places = Place.all.reverse
+    @places = Place.order(:id).page(params[:page]).decorate
   end
 
   def show

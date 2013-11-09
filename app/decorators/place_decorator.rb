@@ -1,4 +1,4 @@
-class PlaceDecorator < Draper::Decorator
+class PlaceDecorator < ApplicationDecorator
   delegate_all
 
   def people
