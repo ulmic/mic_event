@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :check_member_sign, except: [ :index, :show, :new, :create ]
+  before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
     @events = Event.all.reverse

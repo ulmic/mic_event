@@ -1,4 +1,4 @@
-require 'test_controller_helper'
+require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
   def setup

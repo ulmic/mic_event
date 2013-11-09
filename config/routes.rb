@@ -1,8 +1,5 @@
 MicEvents::Application.routes.draw do
   root to: "welcome#index"
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   resources :places
   resources :events do
     member do
@@ -12,7 +9,11 @@ MicEvents::Application.routes.draw do
   resource :welcome, only: :index
   resource :session, only: [ :new, :create, :destroy ]
   resources :users
-  resources :members, except: :show
+  resources :members, except: :show do
+    member do
+      resources :admins, except: :show
+    end
+  end
   get ":number" => "tickets#show", as: "ticket"
   resources :programs
   resources :errors, only: [] do

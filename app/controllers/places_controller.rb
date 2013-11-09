@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_filter :check_member_sign, except: [ :index, :show ]
+  before_filter :check_member_sign_in, except: [ :index, :show ]
 
   def index
     @places = Place.all.reverse
