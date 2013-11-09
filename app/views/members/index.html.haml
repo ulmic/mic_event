@@ -7,7 +7,7 @@
     %li.span3.member_cell
       .thumbnail.height_thumbnail
         %a{ href: ticket_path(member) }
-          = image_tag member.photo.big_thumb
+          = image_tag member.decorate.present_photo.big_thumb
         %h3= member.fio
         %p= member.post
         %br

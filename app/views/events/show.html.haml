@@ -11,7 +11,7 @@
       %a{ href: ticket_path(@event.member) }
         = t('.responsible')
         .mini-thumb
-          = image_tag @event.member.photo.thumb, class: 'img-rounded'
+          = image_tag @event.member.decorate.present_photo.thumb, class: 'img-rounded'
 %hr
 .row-fluid
   = @event.description
@@ -25,4 +25,4 @@
 - @event.checkins.shuffle!.each do |checkin|
   %a{ href: ticket_path(checkin.member) }
     .mini-thumb
-      = image_tag checkin.member.photo.thumb, class: 'img-rounded'
+      = image_tag checkin.member.decorate.present_photo.thumb, class: 'img-rounded'
