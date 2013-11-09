@@ -4,6 +4,7 @@ ru:
       member: Член МИЦ
       event: Мероприятие
       checkin: Чекин
+      admin: Администратор
     attributes:
       member:
         first_name:  Фамилия
@@ -29,6 +30,8 @@ ru:
       checkin:
         description: Описание
         status: Организатор
+      admin:
+        member_id: Член организации
     errors:
       models:
         event:

@@ -15,7 +15,7 @@
             = checkin.description
           %td
             = checkin.event.decorate.date
-          - if current_member_on_page?(@member)
+          - if current_member_on_page?(@member) or admin_signed_in?
             %td
               = link_to t('edit', default: t("helpers.links.edit")), edit_checkin_path(checkin), class: 'btn'
               = link_to t('destroy', default: t("helpers.links.destroy")), checkin_path(checkin), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: t('are_you_sure'))) }, class: 'btn btn-danger'
@@ -26,7 +26,7 @@
       .row-fluid
         %small
           = t('parent')
-      .row-fluid.member-link{ onclick: "return location.href = '/#{@member.parent.number}'" }
+      .row-fluid.member-link{ onclick: "return location.href = '#{ticket_path(@member.parent)}'" }
         .span3
           = image_tag @member.parent.photo.thumb, class: 'img-rounded parrent'
         .span3
@@ -44,7 +44,15 @@
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
-    - if current_member_on_page?(@member)
-      %a.btn{ href: edit_member_path(@member) }
-        = t('edit')
-        = t('profile')
+    .row-fluid
+      - if current_member_on_page?(@member) or admin_signed_in?
+        %a.btn{ href: edit_member_path(@member) }
+          = t('edit')
+          = t('profile')
+      %br
+      - if admin_signed_in?
+        - if @member.admin
+          = link_to t('.destroy_an_admin', default: t("helpers.links.destroy")), admin_path(@member.admin), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
+        - else
+          %a.btn{ href: new_admin_path(@member) }
+            = t('.make_an_admin')

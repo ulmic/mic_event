@@ -1,5 +1,5 @@
 class ProgramsController < ApplicationController
-  before_filter :check_member_sign, except: [ :index, :show ]
+  before_filter :check_member_sign_in, except: [ :index, :show ]
 
   def index
     @programs = Program.all.reverse
