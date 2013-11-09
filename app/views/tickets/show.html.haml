@@ -28,19 +28,19 @@
           = t('parent')
       .row-fluid.member-link{ onclick: "return location.href = '#{ticket_path(@member.parent)}'" }
         .span3
-          = image_tag @member.parent.photo.thumb, class: 'img-rounded parrent'
+          = image_tag @member.parent.decorate.present_photo.thumb, class: 'img-rounded parrent'
         .span3
           %h4
             = @member.parent.decorate.fio
       %br
     .row-fluid
       .span12
-        = image_tag @member.photo
+        = image_tag @member.present_photo
     %br
     .row-fluid
       - @member.children.each do |child|
         .span3{ onclick: "return location.href = '#{ticket_path(child)}'" }
-          = image_tag child.photo.thumb, class: 'img-rounded'
+          = image_tag child.decorate.present_photo.thumb, class: 'img-rounded'
     .row-fluid
       %h3= @member.motto
       %h3= @member.number
