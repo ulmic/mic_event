@@ -7,13 +7,15 @@ class AdminsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    member_sign_in @admin
+
+    get :index, id: @member
     assert_response :success
   end
 
   test "should get new admin" do
     member_sign_in @admin
-    get :new
+    get :new, id: @member
     assert_response :success
   end
 
@@ -21,7 +23,7 @@ class AdminsControllerTest < ActionController::TestCase
     member_sign_in @admin
 
     attributes = attributes_for :admin
-    post :create, admin: attributes
+    post :create, id: @member, admin: attributes
     assert_response :redirect
 
     @admin = Admin.last
@@ -49,28 +51,11 @@ class AdminsControllerTest < ActionController::TestCase
   test "should destroy admin" do
     member_sign_in @admin
 
+    member = @admin.member
     assert_difference('Admin.count', -1) do
       delete :destroy, id: @admin
     end
 
-    assert_redirected_to admins_path
-  end
-
-  test "should not create admin with render new" do
-    member_sign_in @admin
-    attributes = attributes_for :admin
-    attributes[:member_id] = nil
-
-    post :create, admin: attributes
-    assert_template :new
-  end
-
-  test "should not update admin with render edit" do
-    member_sign_in @admin
-
-    attributes = attributes_for :admin
-    attributes[:member_id] = nil
-    put :update, id: @admin, admin: attributes
-    assert_template :edit
+    assert_redirected_to ticket_path(member)
   end
 end

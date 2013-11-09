@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :check_admin_sign_in, except: [ :index, :show ]
+  before_filter :check_admin_sign_in
 
   def index
     @admins = Admin.all.reverse
@@ -13,6 +13,7 @@ class AdminsController < ApplicationController
 
   def edit
     @admin = Admin.find params[:id]
+    @member = @admin.member
   end
 
   def create
