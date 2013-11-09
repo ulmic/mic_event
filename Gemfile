@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-ui-rails'
 gem 'kaminari'
+gem 'russian_sex'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
