@@ -1,6 +1,12 @@
 ru:
   page_not_found: "Страницы, которую вы ищете, просто не существует."
   error_404:      Ошибка 404
+  layouts:
+    footer:
+      about:    О нас
+      ulmic_is: МИЦ - это...
+      contacts: Контакты
+      phone: Телефон
   admins:
     new:
       title: Новый администратор
