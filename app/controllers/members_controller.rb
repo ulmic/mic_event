@@ -6,10 +6,14 @@ class MembersController < ApplicationController
   end
 
   def new
-    unless user_signed_in?
-      redirect_to new_user_path
+    if user_signed_in?
+      if current_user == User.find(params[:id])
+        @member = Member.new
+      else
+        redirect_to new_user_path
+      end
     else
-      @member = Member.new
+      redirect_to root_path
     end
   end
 
@@ -18,6 +22,7 @@ class MembersController < ApplicationController
   end
 
   def create
+    params[:member][:user_id] = current_user.id
     @member = Member.new params[:member]
     if @member.save
       redirect_to new_session_path

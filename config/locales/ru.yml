@@ -1,6 +1,6 @@
 ru:
   page_not_found:            Страницы, которую вы ищете, просто не существует
-  all_fields_must_not_blank: Все поля должны быть заполнены
+  all_fields_must_not_blank: Все поля должны быть заполнены корректно
   error_404:      Ошибка 404
   layouts:
     footer:
@@ -8,6 +8,9 @@ ru:
       ulmic_is: МИЦ - это...
       contacts: Контакты
       phone: Телефон
+  users:
+    new:
+      user_registration: Регистрация пользователя
   admins:
     new:
       title: Новый администратор

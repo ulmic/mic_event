@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
+      user_sign_in @user
       redirect_to new_member_path @user.id
     else
       flash[:notice]= t('all_fields_must_not_blank')
