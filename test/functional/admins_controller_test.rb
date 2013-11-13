@@ -3,19 +3,19 @@ require 'test_helper'
 class AdminsControllerTest < ActionController::TestCase
   setup do
     @admin = create :admin
-    @member = create :member
+    @user = create :user
   end
 
   test "should get index" do
     user_sign_in @admin
 
-    get :index, id: @member
+    get :index, id: @user
     assert_response :success
   end
 
   test "should get new admin" do
     user_sign_in @admin
-    get :new, id: @member
+    get :new, id: @user
     assert_response :success
   end
 
@@ -23,12 +23,12 @@ class AdminsControllerTest < ActionController::TestCase
     user_sign_in @admin
 
     attributes = attributes_for :admin
-    attributes[:member_id] = @member.id
-    post :create, id: @member, admin: attributes
+    attributes[:user_id] = @user.id
+    post :create, id: @user, admin: attributes
     assert_response :redirect
 
     @admin = Admin.last
-    assert_equal attributes[:member_id], @admin.member_id
+    assert_equal attributes[:user_id], @admin.user_id
   end
 
   test "should get edit admin" do
@@ -42,22 +42,22 @@ class AdminsControllerTest < ActionController::TestCase
     user_sign_in @admin
 
     attributes = attributes_for :admin
-    attributes[:member_id] = @member.id
+    attributes[:user_id] = @user.id
     put :update, id: @admin, admin: attributes
     assert_response :redirect
 
     @admin.reload
-    assert_equal attributes[:member_id], @admin.member_id
+    assert_equal attributes[:user_id], @admin.user_id
   end
 
   test "should destroy admin" do
     user_sign_in @admin
 
-    member = @admin.member
+    user = @admin.user
     assert_difference('Admin.count', -1) do
       delete :destroy, id: @admin
     end
 
-    assert_redirected_to ticket_path(member)
+    assert_redirected_to ticket_path(user)
   end
 end
