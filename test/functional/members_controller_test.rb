@@ -19,7 +19,7 @@ class MembersControllerTest < ActionController::TestCase
 
   test "should not get new member" do
     get :new, id: @user
-    assert_redirected_to new_user_path
+    assert_redirected_to root_path
   end
 
   test "should create member" do
