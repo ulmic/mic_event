@@ -1,23 +1,23 @@
 module AuthHelper
-  def member_sign_in(member)
-    session[:member_id] = member.id
+  def user_sign_in(user)
+    session[:user_id] = user.id
   end
 
-  def member_signed_in?
-    session[:member_id] && Member.find_by_id(session[:member_id])
+  def user_signed_in?
+    session[:user_id] && User.find_by_id(session[:user_id])
   end
 
-  def member_sign_out
-    session[:member_id] = nil
+  def user_sign_out
+    session[:user_id] = nil
   end
 
-  def authenticate_member?(member, password)
-    member.password === password
+  def authenticate_user?(user, password)
+    user.password === password
   end
 
-  def current_member
-    if session[:member_id]
-      @current_member ||= Member.find(session[:member_id])
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
     end
   end
 end

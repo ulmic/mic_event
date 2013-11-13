@@ -12,13 +12,13 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should get new place" do
-    member_sign_in @admin
+    user_sign_in @admin
     get :new
     assert_response :success
   end
 
   test "should create place" do
-    member_sign_in @admin
+    user_sign_in @admin
 
     attributes = attributes_for :place
     post :create, place: attributes
@@ -52,14 +52,14 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should get edit place" do
-    member_sign_in @admin
+    user_sign_in @admin
 
     get :edit, id: @place
     assert_response :success
   end
 
   test "should update place" do
-    member_sign_in @admin
+    user_sign_in @admin
 
     attributes = attributes_for :place
     put :update, id: @place, place: attributes
@@ -70,7 +70,7 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should destroy place" do
-    member_sign_in @admin
+    user_sign_in @admin
 
     assert_difference('Place.count', -1) do
       delete :destroy, id: @place
@@ -80,7 +80,7 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should not create place with render new" do
-    member_sign_in @admin
+    user_sign_in @admin
     attributes = attributes_for :place
     attributes[:title] = nil
 
@@ -89,7 +89,7 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should not update place with render edit" do
-    member_sign_in @admin
+    user_sign_in @admin
 
     attributes = attributes_for :place
     attributes[:title] = nil

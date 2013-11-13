@@ -23,16 +23,16 @@
                   %a{ href: members_path }
                     Команда МИЦ
                 %li.divider-vertical
-                - if member_signed_in?
+                - if user_signed_in? and current_user.member
                   %li.pull-right
-                    %a{ href: ticket_path(current_member) }
+                    %a{ href: member_path(current_user.member) }
                       Мой профиль
                   %li.pull-right
                     %a{ "data-method" => "delete", href: session_path,}
                       Выйти
                 - else
                   %li.pull-right
-                    %a{ href: new_member_path }
+                    %a{ href: new_user_path }
                       = t('registration')
                   %li.pull-right
                     %a{ href: new_session_path }

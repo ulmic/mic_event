@@ -1,18 +1,18 @@
 ru:
   activerecord:
     models:
-      member: Член МИЦ
-      event: Мероприятие
+      member:  Член МИЦ
+      event:   Мероприятие
       checkin: Чекин
-      admin: Администратор
+      admin:   Администратор
+      user:    Пользователь
     attributes:
       member:
+        id:          Номер членского билета
         first_name:  Фамилия
         middle_name: Имя
         last_name:   Отчество
         number:      Номер членского билета
-        email:       Email
-        password:    Пароль
         photo:       Фото
         motto:       Девиз по жизни
         post:        Должность
@@ -32,6 +32,8 @@ ru:
         status: Организатор
       admin:
         member_id: Член организации
+      user:
+        password: Пароль
     errors:
       models:
         event:

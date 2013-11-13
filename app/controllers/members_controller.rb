@@ -1,15 +1,22 @@
 class MembersController < ApplicationController
-  before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
+  before_filter :check_user_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
     @members = Kaminari.paginate_array(MemberDecorator.decorate_collection(Member.all.shuffle!)).page(params[:page])
   end
 
+  def show
+    @member = Member.find(params[:id]).decorate
+  end
+
   def new
-    unless member_signed_in?
-      @member = Member.new
+    if user_signed_in?
+      if current_user == User.find(params[:id])
+        @member = Member.new
+      else
+        redirect_to new_user_path
+      end
     else
-      flash[:notice] = t('you_already_have_account')
       redirect_to root_path
     end
   end
@@ -19,7 +26,9 @@ class MembersController < ApplicationController
   end
 
   def create
+    params[:member][:user_id] = current_user.id
     @member = Member.new params[:member]
+    @member.id = params[:member][:id]
     if @member.save
       redirect_to new_session_path
     else
@@ -30,7 +39,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find params[:id]
     if @member.update_attributes params[:member]
-      redirect_to ticket_path(@member)
+      redirect_to member_path(@member)
     else
       render action: :edit
     end

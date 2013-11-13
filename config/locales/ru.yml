@@ -1,5 +1,6 @@
 ru:
-  page_not_found: "Страницы, которую вы ищете, просто не существует."
+  page_not_found:            Страницы, которую вы ищете, просто не существует
+  all_fields_must_not_blank: Все поля должны быть заполнены корректно
   error_404:      Ошибка 404
   layouts:
     footer:
@@ -7,6 +8,9 @@ ru:
       ulmic_is: МИЦ - это...
       contacts: Контакты
       phone: Телефон
+  users:
+    new:
+      user_registration: Регистрация пользователя
   admins:
     new:
       title: Новый администратор
@@ -15,8 +19,6 @@ ru:
       make_an_admin: Сделать администратором
       destroy_an_admin: Удалить администратора
   members:
-    new:
-      registration: Регистрация
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
   events:
@@ -70,6 +72,7 @@ ru:
   organizer: Организатор
   participant: Участник
   registration: Регистрация
+  cover_your_profile: Заполните ваш профиль члена МИЦ
   you_are_checkined_here: Вы уже чекинились на этом мероприятии
   you_already_have_account: У вас уже есть аккаунт
   date:

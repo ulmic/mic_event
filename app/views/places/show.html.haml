@@ -17,7 +17,7 @@
 %hr
 = t('.people_were_here')
 - @place.decorate.people.each do |member|
-  %a{ href: ticket_path(member) }
+  %a{ href: member_path(member) }
     .mini-thumb
       = image_tag member.decorate.present_photo.thumb, class: 'img-rounded'
 
