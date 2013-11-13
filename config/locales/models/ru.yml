@@ -8,6 +8,7 @@ ru:
       user:    Пользователь
     attributes:
       member:
+        id:          Номер членского билета
         first_name:  Фамилия
         middle_name: Имя
         last_name:   Отчество

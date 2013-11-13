@@ -28,6 +28,7 @@ class MembersController < ApplicationController
   def create
     params[:member][:user_id] = current_user.id
     @member = Member.new params[:member]
+    @member.id = params[:member][:id]
     if @member.save
       redirect_to new_session_path
     else

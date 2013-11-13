@@ -19,8 +19,6 @@ ru:
       make_an_admin: Сделать администратором
       destroy_an_admin: Удалить администратора
   members:
-    new:
-      registration: Регистрация
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
   events:
@@ -74,6 +72,7 @@ ru:
   organizer: Организатор
   participant: Участник
   registration: Регистрация
+  cover_your_profile: Заполните ваш профиль члена МИЦ
   you_are_checkined_here: Вы уже чекинились на этом мероприятии
   you_already_have_account: У вас уже есть аккаунт
   date:

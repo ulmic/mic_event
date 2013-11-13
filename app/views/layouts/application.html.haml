@@ -23,9 +23,9 @@
                   %a{ href: members_path }
                     Команда МИЦ
                 %li.divider-vertical
-                - if user_signed_in?
+                - if user_signed_in? and current_user.member
                   %li.pull-right
-                    %a{ href: member_path(current_user) }
+                    %a{ href: member_path(current_user.member) }
                       Мой профиль
                   %li.pull-right
                     %a{ "data-method" => "delete", href: session_path,}
