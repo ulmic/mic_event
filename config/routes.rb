@@ -13,8 +13,12 @@ MicEvents::Application.routes.draw do
     end
   end
   resource :session, only: [ :new, :create, :destroy ]
-  resources :users
-  resources :members, except: :show do
+  resources :users, only: [ :new, :create ] do
+    member do
+      resources :members, only: :new
+    end
+  end
+  resources :members, except: [ :show, :new ] do
     member do
       resources :admins, except: :show
     end

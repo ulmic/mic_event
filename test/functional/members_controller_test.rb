@@ -3,6 +3,7 @@ require 'test_helper'
 class MembersControllerTest < ActionController::TestCase
   setup do
     @member = create :member
+    @user = create :user
   end
 
   test "should get index" do
@@ -11,22 +12,21 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should get new member" do
-    get :new
+    user_sign_in @user
+    get :new, id: @user
     assert_response :success
   end
 
   test "should not get new member" do
-    user_sign_in @member
-
-    get :new
-    assert_redirected_to root_path
+    get :new, id: @user
+    assert_redirected_to new_user_path
   end
 
   test "should create member" do
-    user_sign_in @member
+    user_sign_in @user
 
     attributes = attributes_for :member
-    attributes[:user_id] = 1
+    attributes[:user_id] = @user.id
     post :create, member: attributes
     assert_response :redirect
 

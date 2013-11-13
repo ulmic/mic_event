@@ -7,10 +7,9 @@ class MembersController < ApplicationController
 
   def new
     unless user_signed_in?
-      @member = Member.new
+      redirect_to new_user_path
     else
-      flash[:notice] = t('you_already_have_account')
-      redirect_to root_path
+      @member = Member.new
     end
   end
 
