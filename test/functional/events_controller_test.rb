@@ -88,6 +88,6 @@ class EventsControllerTest < ActionController::TestCase
   test "should be current member checkined on current event" do
     checkin = create :checkin
     user_sign_in checkin.member
-    assert_equal checkin, current_member_checkined?(checkin.event)
+    assert_equal checkin, current_user_checkined?(checkin.event)
   end
 end

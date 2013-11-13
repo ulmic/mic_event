@@ -21,10 +21,6 @@
       = f.association :parent,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.number}" }, value_method: :id
       = f.label :motto,            class: :span6
       = f.text_field :motto,       class: :span6
-      = f.label :email,            class: :span6
-      = f.text_field :email,       class: :span6
-      = f.label :password,         class: :span6
-      = f.text_field :password,    class: :span6, type: :password
       = f.label :photo,            class: :span6
       - if @member and @member.photo
         = image_tag @member.photo.thumb, class: 'img-polaroid'

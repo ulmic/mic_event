@@ -41,7 +41,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not get edit member with not access" do
-    member_sign_out
+    user_sign_out
 
     get :edit, id: @member
     assert_redirected_to not_found_errors_path
