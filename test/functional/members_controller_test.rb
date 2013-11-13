@@ -11,10 +11,22 @@ class MembersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get show" do
+    get :show, id: @member
+    assert_response :success
+  end
+
   test "should get new member" do
     user_sign_in @user
     get :new, id: @user
     assert_response :success
+  end
+
+  test "should not get new and get new_user" do
+    another_user = create :user
+    user_sign_in another_user
+    get :new, id: @user
+    assert_redirected_to new_user_path
   end
 
   test "should not get new member" do
