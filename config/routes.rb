@@ -16,14 +16,12 @@ MicEvents::Application.routes.draw do
   resources :users, only: [ :new, :create ] do
     member do
       resources :members, only: :new
+      resources :admins, except: [ :show, :index ]
     end
   end
-  resources :members, except: [ :show, :new ] do
-    member do
-      resources :admins, except: :show
-    end
-  end
-  get ":number" => "tickets#show", as: "ticket"
+  resources :admins, only: :index
+  resources :members, except: [ :show, :new ]
+  get ":id" => "members#show", as: "member"
   resources :programs
   resources :errors, only: [] do
     collection do

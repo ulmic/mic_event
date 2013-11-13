@@ -5,6 +5,10 @@ class MembersController < ApplicationController
     @members = Kaminari.paginate_array(MemberDecorator.decorate_collection(Member.all.shuffle!)).page(params[:page])
   end
 
+  def show
+    @member = Member.find(params[:id]).decorate
+  end
+
   def new
     if user_signed_in?
       if current_user == User.find(params[:id])
@@ -34,7 +38,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find params[:id]
     if @member.update_attributes params[:member]
-      redirect_to ticket_path(@member)
+      redirect_to member_path(@member)
     else
       render action: :edit
     end

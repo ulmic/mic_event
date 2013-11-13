@@ -53,11 +53,10 @@ class AdminsControllerTest < ActionController::TestCase
   test "should destroy admin" do
     user_sign_in @admin
 
-    user = @admin.user
     assert_difference('Admin.count', -1) do
       delete :destroy, id: @admin
     end
 
-    assert_redirected_to ticket_path(user)
+    assert_redirected_to admins_path
   end
 end

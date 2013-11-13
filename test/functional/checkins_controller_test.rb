@@ -68,7 +68,7 @@ class CheckinsControllerTest < ActionController::TestCase
       delete :destroy, id: @checkin
     end
 
-    assert_redirected_to ticket_path(member)
+    assert_redirected_to member_path(member)
   end
 
   test "should not create checkin with render new" do

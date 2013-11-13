@@ -2,7 +2,6 @@ class Member < ActiveRecord::Base
   attr_accessible :first_name,
                   :last_name,
                   :middle_name,
-                  :number,
                   :photo,
                   :motto,
                   :post,
@@ -21,8 +20,6 @@ class Member < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :middle_name, presence: true
-  validates :number, presence: true,
-                     uniqueness: true
   validates :motto, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
 end

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email params[:user][:email]
     if @user && authenticate_user?(@user, params[:user][:password])
       user_sign_in @user
-      redirect_to ticket_path(@user)
+      redirect_to member_path(@user)
     else
       @user = User.new params[:user]
       flash[:notice] = t('.wrong_login')

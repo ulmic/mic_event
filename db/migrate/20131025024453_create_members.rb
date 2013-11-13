@@ -4,7 +4,6 @@ class CreateMembers < ActiveRecord::Migration
       t.text :first_name
       t.text :middle_name
       t.text :last_name
-      t.integer :number
       t.string :motto
       t.text :photo
       t.text :post
