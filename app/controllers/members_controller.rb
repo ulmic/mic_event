@@ -1,12 +1,12 @@
 class MembersController < ApplicationController
-  before_filter :check_member_sign_in, except: [ :index, :show, :new, :create ]
+  before_filter :check_user_sign_in, except: [ :index, :show, :new, :create ]
 
   def index
     @members = Kaminari.paginate_array(MemberDecorator.decorate_collection(Member.all.shuffle!)).page(params[:page])
   end
 
   def new
-    unless member_signed_in?
+    unless user_signed_in?
       @member = Member.new
     else
       flash[:notice] = t('you_already_have_account')

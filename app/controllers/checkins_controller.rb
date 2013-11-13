@@ -1,5 +1,5 @@
 class CheckinsController < ApplicationController
-  before_filter :check_member_sign_in, except: :index
+  before_filter :check_user_sign_in, except: :index
   def index
     @checkins = Checkin.all.reverse
   end

@@ -13,14 +13,14 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should get new checkin" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :new, id: @event
     assert_response :success
   end
 
   test "should not get new checkin because already has an checkin" do
-    member_sign_in @member
+    user_sign_in @member
     checkin = create :checkin
     checkin.member = @member
     @member.checkins.push checkin
@@ -32,7 +32,7 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should create checkin" do
-    member_sign_in @member
+    user_sign_in @member
     attributes = attributes_for :checkin
     attributes[:member_id] = @member.id
     post :create, id: @event, checkin: attributes
@@ -43,14 +43,14 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should get edit checkin" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :edit, id: @checkin
     assert_response :success
   end
 
   test "should update checkin" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :checkin
     put :update, id: @checkin, checkin: attributes
@@ -62,7 +62,7 @@ class CheckinsControllerTest < ActionController::TestCase
 
   test "should destroy checkin" do
     member = @checkin.member
-    member_sign_in member
+    user_sign_in member
 
     assert_difference('Checkin.count', -1) do
       delete :destroy, id: @checkin
@@ -72,7 +72,7 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should not create checkin with render new" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :checkin
     attributes[:status] = nil
@@ -81,7 +81,7 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should not update checkin with render edit" do
-    member_sign_in @member
+    user_sign_in @member
     attributes = attributes_for :checkin
     attributes[:member_id] = nil
     put :update, id: @checkin, checkin: attributes

@@ -16,14 +16,14 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not get new member" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :new
     assert_redirected_to root_path
   end
 
   test "should create member" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :member
     post :create, member: attributes
@@ -34,7 +34,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should get edit member" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :edit, id: @member
     assert_response :success
@@ -48,7 +48,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should update member" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :member
     put :update, id: @member, member: attributes
@@ -59,7 +59,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should destroy member" do
-    member_sign_in @member
+    user_sign_in @member
 
     assert_difference('Member.count', -1) do
       delete :destroy, id: @member
@@ -69,7 +69,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not create member with render new" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :member
     attributes[:first_name] = nil
@@ -78,7 +78,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not update member with render edit" do
-    member_sign_in @member
+    user_sign_in @member
     attributes = attributes_for :member
     attributes[:first_name] = nil
     put :update, id: @member, member: attributes

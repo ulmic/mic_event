@@ -13,14 +13,14 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should get new event" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :new
     assert_response :success
   end
 
   test "should create event" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :event
     attributes[:member_id] = @member.id
@@ -38,14 +38,14 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should get edit event" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :edit, id: @event
     assert_response :success
   end
 
   test "should update event" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :event
     put :update, id: @event, event: attributes
@@ -56,7 +56,7 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should destroy event" do
-    member_sign_in @member
+    user_sign_in @member
 
     assert_difference('Event.count', -1) do
       delete :destroy, id: @event
@@ -66,7 +66,7 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should not create event with render new" do
-    member_sign_in @member
+    user_sign_in @member
     attributes = attributes_for :event
     attributes[:title] = nil
 
@@ -75,7 +75,7 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should not update event with render edit" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :event
     attributes[:title] = nil
@@ -87,7 +87,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should be current member checkined on current event" do
     checkin = create :checkin
-    member_sign_in checkin.member
+    user_sign_in checkin.member
     assert_equal checkin, current_member_checkined?(checkin.event)
   end
 end

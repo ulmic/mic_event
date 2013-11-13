@@ -4,11 +4,10 @@ FactoryGirl.define do
     middle_name { generate :string }
     last_name   { generate :string }
     number
-    email
-    password
     motto       { generate :string }
     photo
     post        { generate :string }
     parent_id      1
+    user
   end
 end
