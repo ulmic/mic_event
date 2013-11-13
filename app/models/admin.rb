@@ -1,7 +1,7 @@
 class Admin < ActiveRecord::Base
-  attr_accessible :member_id
+  attr_accessible :user_id
 
-  belongs_to :member
+  belongs_to :user
 
-  validates :member_id, presence: :true
+  validates :user_id, presence: :true
 end

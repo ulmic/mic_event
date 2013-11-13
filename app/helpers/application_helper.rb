@@ -2,8 +2,8 @@ module ApplicationHelper
   include AuthHelper
 
   def admin_signed_in?
-    if member_signed_in?
-      current_member.admin
+    if user_signed_in?
+      current_user.admin
     end
   end
 end

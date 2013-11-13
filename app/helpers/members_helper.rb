@@ -3,7 +3,7 @@ module MembersHelper
     index % 4 == 0
   end
 
-  def current_member_on_page?(member)
-    current_member == member
+  def current_user_on_page?(member)
+    current_user == member
   end
 end

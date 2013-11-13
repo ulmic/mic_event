@@ -1,0 +1,11 @@
+.offset3.span5
+  %h2
+    = t('.user_registration')
+  = simple_form_for @user do |f|
+    - f.with_options input_html: { class: :span5 } do |f|
+      .field
+        = f.input :email
+        = f.input :password
+    .form-actions
+      = f.button :submit, t('save'), class: 'btn btn-primary'
+      = link_to t('cancel', default: t("helpers.links.cancel")), users_path, class: 'btn'

@@ -12,14 +12,14 @@ class ProgramsControllerTest < ActionController::TestCase
   end
 
   test "should get new program" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :new
     assert_response :success
   end
 
   test "should create program" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :program
     post :create, program: attributes
@@ -35,14 +35,14 @@ class ProgramsControllerTest < ActionController::TestCase
   end
 
   test "should get edit program" do
-    member_sign_in @member
+    user_sign_in @member
 
     get :edit, id: @program
     assert_response :success
   end
 
   test "should update program" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :program
     put :update, id: @program, program: attributes
@@ -53,7 +53,7 @@ class ProgramsControllerTest < ActionController::TestCase
   end
 
   test "should destroy program" do
-    member_sign_in @member
+    user_sign_in @member
 
     assert_difference('Program.count', -1) do
       delete :destroy, id: @program
@@ -63,7 +63,7 @@ class ProgramsControllerTest < ActionController::TestCase
   end
 
   test "should not create program with render new" do
-    member_sign_in @member
+    user_sign_in @member
     attributes = attributes_for :program
     attributes[:name] = nil
 
@@ -72,7 +72,7 @@ class ProgramsControllerTest < ActionController::TestCase
   end
 
   test "should not update program with render edit" do
-    member_sign_in @member
+    user_sign_in @member
 
     attributes = attributes_for :program
     attributes[:name] = nil
