@@ -27,7 +27,6 @@ class MembersControllerTest < ActionController::TestCase
 
     attributes = attributes_for :member
     attributes[:user_id] = 1
-    binding.pry
     post :create, member: attributes
     assert_response :redirect
 
