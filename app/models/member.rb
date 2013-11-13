@@ -24,4 +24,5 @@ class Member < ActiveRecord::Base
   validates :number, presence: true,
                      uniqueness: true
   validates :motto, presence: true, length: { maximum: 140 }
+  validates :user_id, presence: true
 end
