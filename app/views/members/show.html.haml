@@ -8,7 +8,9 @@
       - @member.checkins.each do |checkin|
         %tr{ onclick: "return location.href = '#{event_path(checkin.event)}'" }
           %td
-            =link_to checkin.event.title, event_path(checkin.event)
+            = image_tag checkin.event.program.logo.mini_thumb
+          %td
+            = link_to checkin.event.title, event_path(checkin.event)
           %td
             = checkin.decorate.status_locale
           %td
