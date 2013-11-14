@@ -8,6 +8,9 @@
 = simple_form_for @member do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
+      - if admin_signed_in?
+        = @member.decorate.confirm_status
+        = f.input :confirm, collection: @member.confirm_paths.to_states
       = f.label :first_name,       class: :span6
       = f.text_field :first_name,  class: :span6
       = f.label :middle_name,      class: :span6

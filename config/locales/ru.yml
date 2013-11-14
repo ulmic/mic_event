@@ -55,6 +55,16 @@ ru:
           attributes:
             email:
               blank: "Email не может быть пустым."
+    state_machines:
+      member:
+        confirm_state:
+          states:
+            new:    Неотмеченный
+            accepted: Подтверждённый
+            busted:   Опровергнутный
+          events:
+            accept: Подтвердить
+            bust:   Опровергнуть
   save: Сохранить
   edit: Изменить
   cancel: Отмена
