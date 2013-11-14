@@ -20,8 +20,9 @@ MicEvents::Application.routes.draw do
     end
   end
   resources :admins, only: :index
-  resources :members, except: [ :show, :new ]
+  resources :members, except: [ :show, :new, :update ]
   get ":id" => "members#show", as: "member"
+  put ":id" => "members#update"
   resources :programs
   resources :errors, only: [] do
     collection do

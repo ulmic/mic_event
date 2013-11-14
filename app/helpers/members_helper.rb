@@ -3,7 +3,9 @@ module MembersHelper
     index % 4 == 0
   end
 
-  def current_user_on_page?(member)
-    current_user == member
+  def current_user_on_page?(user)
+    if current_user
+      current_user.id == user.id
+    end
   end
 end

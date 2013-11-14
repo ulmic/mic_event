@@ -20,6 +20,7 @@ gem 'rmagick'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'russian_sex'
+gem 'state_machine'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

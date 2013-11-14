@@ -38,12 +38,13 @@
                     %a{ href: new_session_path }
                       = t('auth')
     .jumbotron
-      = flash[:notice]
-      = yield
-
-    = render "layouts/reformal"
-    %hr
-    = render "layouts/footer"
+      .row
+        = flash[:notice]
+        = yield
+        = render "layouts/reformal"
+      .row
+        %hr
+        = render "layouts/footer"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags

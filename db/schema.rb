@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20131113191931) do
     t.text     "post"
     t.integer  "parent_id"
     t.integer  "user_id"
+    t.string   "confirm"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

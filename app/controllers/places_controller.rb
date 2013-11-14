@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_filter :check_admin_sign_in, except: [ :index, :show ]
+  before_filter :check_confirmed_member_sign_in, except: [ :index, :show ]
 
   def index
     @places = Kaminari.paginate_array(PlaceDecorator.decorate_collection(Place.all.reverse)).page(params[:page])

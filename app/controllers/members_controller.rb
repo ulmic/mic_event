@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find params[:id]
     if @member.update_attributes params[:member]
-      redirect_to member_path(@member)
+      redirect_to member_path @member
     else
       render action: :edit
     end
