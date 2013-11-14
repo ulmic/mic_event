@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_confirmed_member_sign_in
+    check_user_sign_in
+    unless current_user.member.accepted?
+      flash[:notice] = t('your_account_must_be_confirmed_by_admins')
+      redirect_to root_path
+    end
+  end
+
   def check_admin_sign_in
     unless user_signed_in?
       redirect_to not_found_errors_path
