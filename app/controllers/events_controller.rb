@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :check_user_sign_in, except: [ :index, :show, :new, :create ]
+  before_filter :check_confirmed_member_sign_in, except: [ :index, :show ]
 
   def index
     @events = Kaminari.paginate_array(EventDecorator.decorate_collection(Event.all.reverse)).page(params[:page])

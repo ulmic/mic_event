@@ -6,4 +6,10 @@ module ApplicationHelper
       current_user.admin
     end
   end
+
+  def confirmed_member_signed_in?
+    if user_signed_in?
+      current_user.member.accepted?
+    end
+  end
 end

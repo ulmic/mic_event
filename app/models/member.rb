@@ -6,7 +6,8 @@ class Member < ActiveRecord::Base
                   :motto,
                   :post,
                   :parent_id,
-                  :user_id
+                  :user_id,
+                  :confirm
 
   mount_uploader :photo, PhotoUploader
 
@@ -22,4 +23,18 @@ class Member < ActiveRecord::Base
   validates :middle_name, presence: true
   validates :motto, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+
+  state_machine :confirm, initial: :new do
+    state :new
+    state :accepted
+    state :busted
+
+    event :accept do
+      transition new: :accepted
+    end
+
+    event :bust do
+      transition [ :new, :accepted] => :busted
+    end
+  end
 end

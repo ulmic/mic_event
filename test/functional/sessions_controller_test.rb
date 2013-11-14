@@ -3,6 +3,9 @@ require 'test_helper'
 class SessionsControllerTest < ActionController::TestCase
   def setup
     @user = create :user
+    @member = create :member
+    @member.user = @user
+    @user.member = @member
   end
 
   test "should get new" do
@@ -12,7 +15,6 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "should post create" do
     attrs = { email: @user.email, password: @user.password }
-
     post :create, user: attrs
     assert_response :redirect
 
