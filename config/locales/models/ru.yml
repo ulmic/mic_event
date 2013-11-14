@@ -25,6 +25,7 @@ ru:
         end_datetime: Дата и время окончания мероприятия
         place: Место
         member: Ответственный
+        program: Направление деятельности
       place:
         title: Название
         description: Описание

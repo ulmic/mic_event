@@ -20,7 +20,7 @@
       %a.btn{ href: new_place_path }
         = t('.add_place')
       = f.association :program,    label_method: :name, value_method: :id
-      = f.association :member,     label_method: :first_name, value_method: :id
+      = f.association :member,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
     .form-actions
       = f.button :submit, t('save'), class: 'btn btn-primary'
       = link_to t('cancel', default: t("helpers.links.cancel")), events_path, class: 'btn'

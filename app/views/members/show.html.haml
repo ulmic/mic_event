@@ -45,14 +45,14 @@
       %h3= @member.motto
       %h3= @member.id
     .row-fluid
-      - if current_user_on_page?(@member) or admin_signed_in?
+      - if current_user_on_page?(@member.user) or admin_signed_in?
         %a.btn{ href: edit_member_path(@member) }
           = t('edit')
           = t('profile')
       %br
       - if admin_signed_in?
         - if @member.user.admin
-          = link_to t('.destroy_an_admin', default: t("helpers.links.destroy")), admin_path(@member.user.admin), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
+          = link_to t('destroy_an_admin', default: t("helpers.links.destroy")), admin_path(@member.user.admin), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-danger'
         - else
           %a.btn{ href: new_admin_path(@member) }
-            = t('.make_an_admin')
+            = t('make_an_admin')

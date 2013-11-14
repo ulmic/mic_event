@@ -11,12 +11,17 @@
       %a{ href: member_path(@event.member) }
         = t('.responsible')
         .mini-thumb
-          = image_tag @event.member.decorate.present_photo.thumb, class: 'img-rounded'
+          = image_tag @event.member.decorate.present_photo_thumb, class: 'img-rounded'
 %hr
 .row-fluid
   = @event.description
-- unless current_user_checkined? @event
-  %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
+%hr
+- if confirmed_member_signed_in?
+  - unless current_user_checkined? @event
+    %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
+- else
+  %span.label.label-important
+    = t('your_account_must_be_confirmed_by_admins')
 %hr
 .row-fluid
 = t('.checkined_here')
@@ -25,4 +30,4 @@
 - @event.checkins.shuffle!.each do |checkin|
   %a{ href: member_path(checkin.member) }
     .mini-thumb
-      = image_tag checkin.member.decorate.present_photo.thumb, class: 'img-rounded'
+      = image_tag checkin.member.decorate.present_photo_thumb, class: 'img-rounded'

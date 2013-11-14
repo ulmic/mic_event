@@ -19,9 +19,9 @@ class CheckinsController < ApplicationController
   end
 
   def create
+    params[:checkin][:event_id] = params[:id]
+    params[:checkin][:member_id] = current_user.member.id
     @checkin = Checkin.new params[:checkin]
-    @checkin.event_id = params[:id]
-    @checkin.member_id = current_user.id
     if @checkin.save
       redirect_to @checkin.event
     else

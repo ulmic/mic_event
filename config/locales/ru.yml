@@ -14,13 +14,10 @@ ru:
   admins:
     new:
       title: Новый администратор
-  tickets:
-    show:
-      make_an_admin: Сделать администратором
-      destroy_an_admin: Удалить администратора
   members:
     form:
       prohibited_this_member_from_being_saved: Пользователь не может быть создан
+    show:
   events:
     new:
       add_event: Добавить мероприятие
@@ -85,6 +82,9 @@ ru:
   cover_your_profile: Заполните ваш профиль члена МИЦ
   you_are_checkined_here: Вы уже чекинились на этом мероприятии
   you_already_have_account: У вас уже есть аккаунт
+  make_an_admin: Сделать администратором
+  destroy_an_admin: Удалить администратора
+  your_account_must_be_confirmed_by_admins: Ваш профиль члена МИЦ должен быть подтверждён администратором
   date:
     abbr_day_names:
     - Вс

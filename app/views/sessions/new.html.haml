@@ -1,4 +1,5 @@
 .offset3.span5
+  %h2= t('auth')
   = simple_form_for @user, url: session_path do |f|
     - f.with_options input_html: { class: :span4 } do |f|
       .field
