@@ -4,6 +4,6 @@ module MembersHelper
   end
 
   def current_user_on_page?(user)
-    current_user == user
+    current_user.id == user.id
   end
 end
