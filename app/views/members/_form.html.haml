@@ -10,7 +10,9 @@
     .field
       - if admin_signed_in?
         = @member.decorate.confirm_status
-        = f.input :confirm, collection: @member.confirm_paths.to_states
+        - unless @member.accepted?
+          = f.input :confirm, collection: @member.confirm_paths.to_states
+      %br
       = f.label :first_name,       class: :span6
       = f.text_field :first_name,  class: :span6
       = f.label :middle_name,      class: :span6
