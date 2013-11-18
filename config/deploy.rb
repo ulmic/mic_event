@@ -50,7 +50,7 @@ end
 
 namespace :log do
   task :get do
-    run "cd #{current_path}/public && cp #{app_dir}/shared/logs/#{rails_env}.log ./#{rails_env}.log"
+    run "cd #{current_path}/public && cp #{app_dir}/shared/log/#{rails_env}.log ./#{rails_env}.log"
   end
 
   task :clean do
