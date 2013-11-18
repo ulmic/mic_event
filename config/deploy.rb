@@ -49,11 +49,11 @@ namespace :assets do
 end
 
 namespace :log do
-  task :on do
-    run "cd #{current_path}/public && ln -sv #{app_dir}/shared/logs/#{rails_env}.log ./#{rails_env}.log"
+  task :get do
+    run "cd #{current_path}/public && cp #{app_dir}/shared/logs/#{rails_env}.log ./#{rails_env}.log"
   end
 
-  task :off do
+  task :clean do
     run "cd #{current_path}/public && rm ./#{rails_env}.log"
   end
 end
