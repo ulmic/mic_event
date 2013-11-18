@@ -31,11 +31,6 @@ task :seed_data do
 end
 
 namespace :db do
-  desc "Symlink to sqlite db"
-  task :symlink do
-    run "cd #{current_path}/db && ln -s #{app_dir}/shared/db/development.sqlite3"
-  end
-
   task :migrate do
     run "cd #{current_path}/ && RAILS_ENV=production rake db:migrate"
   end
@@ -53,7 +48,16 @@ namespace :assets do
   end
 end
 
+namespace :log do
+  task :on do
+    run "cd #{current_path}/public && ln -sv #{app_dir}/shared/logs/#{rails_env}.log ./#{rails_env}.log"
+  end
 
-after 'deploy:create_symlink', 'db:symlink'
-before 'assets:precompile', 'bundler:install'
+  task :off do
+    run "cd #{current_path}/public && rm ./#{rails_env}.log"
+  end
+end
+
+before 'assets:precompile', 'db:migrate'
+before 'db:migrate', 'bundler:install'
 before 'deploy:create_symlink', 'assets:precompile'
