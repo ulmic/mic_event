@@ -35,6 +35,10 @@ namespace :db do
   task :symlink do
     run "cd #{current_path}/db && ln -s #{app_dir}/shared/db/development.sqlite3"
   end
+
+  task :migrate do
+    run "cd #{current_path}/ && RAILS_ENV=production rake db:migrate"
+  end
 end
 
 namespace :bundler do
