@@ -1,6 +1,8 @@
 %html
   %head
     %title Этажи Роста
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "bootstrap_and_overrides"
   %body
     .navbar-wrapper
       .container
@@ -45,7 +47,5 @@
       .row
         %hr
         = render "layouts/footer"
-    = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    = stylesheet_link_tag "bootstrap_and_overrides"
