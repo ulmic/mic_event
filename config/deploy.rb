@@ -8,7 +8,7 @@ set :rvm_type, :user
 role :web, "ulgood.ru"
 role :db, "ulgood.ru", primary: true
 
-set :user, "user"
+set :user, "mic_event"
 
 set :use_sudo, false
 
