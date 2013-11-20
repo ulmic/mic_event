@@ -13,7 +13,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: mic_event_production
+  database: mic_event
   pool: 5
   username: mic_event
-  password: mic_event73
