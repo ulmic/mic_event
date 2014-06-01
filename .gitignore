@@ -29,3 +29,4 @@ config/initializers/secret_token.rb
 *.swp
 *.swm
 *.sqlite3-journal
+*~
