@@ -21,6 +21,7 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'russian_sex'
 gem 'state_machine'
+gem 'bootstrap_flash_messages'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
