@@ -34,7 +34,7 @@ group :test do
   gem "mocha", require: false
   gem 'factory_girl_rails', require: false
   gem 'turn'
-  gem 'tconsole'
+  gem 'tconsole', "1.3.0.pre3", git: "git://github.com/kalashnikovisme/tconsole"
   gem 'coveralls', require: false
   gem 'pry'
 end
