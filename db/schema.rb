@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20131113191931) do
     t.string   "email"
     t.string   "password"
     t.string   "confirm_state"
+    t.string   "role"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

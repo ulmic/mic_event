@@ -29,4 +29,12 @@ MicEvents::Application.routes.draw do
       get :not_found
     end
   end
+  namespace :admin do
+    resources :users, except: [ :show, :destroy ] do
+      member do
+        put :accept
+        put :bust
+      end
+    end
+  end
 end

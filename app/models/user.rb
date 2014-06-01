@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :confirm_state
+  extend Enumerize
+  attr_accessible :email, :password, :confirm_state, :role
+
+  enumerize :role, in: [ :admin, :user ], default: :user
 
   has_one :member
   has_one :admin
