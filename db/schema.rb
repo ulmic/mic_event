@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20131113191931) do
     t.text     "post"
     t.integer  "parent_id"
     t.integer  "user_id"
-    t.string   "confirm"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -73,8 +72,9 @@ ActiveRecord::Schema.define(:version => 20131113191931) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "confirm_state"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
