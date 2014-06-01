@@ -8,5 +8,6 @@ git clone git@github.com:ulmic/mic_event
 cd mic_event
 git flow init
 bundle
+RAILS_ENV=test rake db:migrate
 tconsole all
 ```
