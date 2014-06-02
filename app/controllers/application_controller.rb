@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def check_user_not_busted
+  def check_current_user_not_busted
     check_user_sign_in
-    if current_user.busted?
+    if current_user and current_user.busted?
       redirect_to you_are_busted_pages_path
     end
   end

@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_filter :check_user_sign_in, except: [ :index, :show, :new, :create ]
-  before_filter :check_user_not_busted, only: [ :show, :edit, :update, :destroy ]
+  before_filter :check_current_user_not_busted, only: [ :edit, :update, :destroy ]
 
   def index
     @members = Kaminari.paginate_array(MemberDecorator.decorate_collection(Member.all.shuffle!)).page(params[:page])
@@ -8,6 +8,9 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id]).decorate
+    if @member.user.busted?
+      redirect_to not_found_errors_path
+    end
   end
 
   def new
