@@ -1,5 +1,11 @@
 MicEvents::Application.routes.draw do
   root to: "welcome#index"
+  resources :pages do
+    collection do
+      get :you_are_busted
+      get :privacy
+    end
+  end
   resources :places
   resources :events do
     member do
