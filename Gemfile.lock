@@ -232,6 +232,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    usefull_scopes (0.2.1)
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -279,4 +280,5 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
+  usefull_scopes
   validates

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   extend Enumerize
+  include UsefullScopes
   attr_accessible :email, :password, :confirm_state, :role
 
   enumerize :role, in: [ :admin, :user ], default: :user
