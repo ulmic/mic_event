@@ -34,6 +34,7 @@ MicEvents::Application.routes.draw do
       member do
         put :accept
         put :bust
+        put :retrieve
       end
     end
   end

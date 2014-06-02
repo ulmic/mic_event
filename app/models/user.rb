@@ -27,8 +27,8 @@ class User < ActiveRecord::Base
       transition [ :new, :accepted ] => :busted
     end
 
-    event :return do
-      transition bust: :accepted
+    event :retrieve do
+      transition busted: :accepted
     end
   end
 end

@@ -34,4 +34,9 @@ class Admin::UsersController < Admin::ApplicationController
     @user.bust
     redirect_to admin_users_path
   end
+  def retrieve
+    @user = User.find params[:id]
+    @user.retrieve
+    redirect_to admin_users_path
+  end
 end

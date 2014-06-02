@@ -69,6 +69,15 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert_redirected_to admin_users_path
   end
 
+  test "should put retrieve" do
+    @user.bust
+    put :retrieve, id: @user
+    assert_response :redirect, @response.body
+    @user.reload
+    assert @user.accepted?
+    assert_redirected_to admin_users_path
+  end
+
   test "should put accept" do
     put :accept, id: @user
     assert_response :redirect, @response.body
