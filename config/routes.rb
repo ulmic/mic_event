@@ -7,7 +7,7 @@ MicEvents::Application.routes.draw do
       get :privacy
     end
   end
-  resources :places
+  resources :places, only: [ :index, :show ]
   resources :events, only: [ :index, :show ] do
     member do
       resources :checkins, except: :show
@@ -36,8 +36,9 @@ MicEvents::Application.routes.draw do
     end
   end
   namespace :admin do
-    resources :programs
-    resources :events
+    resources :programs, except: :show
+    resources :events, except: :show
+    resources :places, except: :show
     resources :users, except: [ :show, :destroy ] do
       member do
         put :accept
