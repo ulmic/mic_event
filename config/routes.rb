@@ -1,5 +1,6 @@
 MicEvents::Application.routes.draw do
   root to: "welcome#index"
+  get "/admin" => "admin/welcome#index"
   resources :pages do
     collection do
       get :you_are_busted
@@ -7,7 +8,7 @@ MicEvents::Application.routes.draw do
     end
   end
   resources :places
-  resources :events do
+  resources :events, only: [ :index, :show ] do
     member do
       resources :checkins, except: :show
     end
@@ -36,6 +37,7 @@ MicEvents::Application.routes.draw do
   end
   namespace :admin do
     resources :programs
+    resources :events
     resources :users, except: [ :show, :destroy ] do
       member do
         put :accept
