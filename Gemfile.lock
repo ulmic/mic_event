@@ -71,6 +71,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.6)
+    configus (0.0.5)
     coveralls (0.7.0)
       multi_json (~> 1.3)
       rest-client
@@ -250,6 +251,7 @@ DEPENDENCIES
   carrierwave
   ckeditor
   coffee-rails (~> 3.2.1)
+  configus
   coveralls
   date_validator
   draper (~> 1.0.0)

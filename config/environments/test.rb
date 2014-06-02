@@ -34,4 +34,7 @@ MicEvents::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  ActionDispatch::Reloader.to_prepare do
+    load Rails.root.join('lib/configus.rb')
+  end
 end
