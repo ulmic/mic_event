@@ -4,7 +4,7 @@ class EventsControllerTest < ActionController::TestCase
   setup do
     @event = create :event
     @member = create :member
-    @member.accept
+    @member.user.accept
     @place = create :place
   end
 

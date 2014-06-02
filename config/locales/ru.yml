@@ -93,3 +93,8 @@ ru:
     you_are_busted:
       sorry_but_you_are_busted: "К сожалению, ваш профиль был удалён из-за нарушения правил этого сервиса."
       license_agreement: Политика конфиденциальности
+  date:
+    order:
+    - :day
+    - :month
+    - :year
