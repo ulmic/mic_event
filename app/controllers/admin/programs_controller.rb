@@ -1,12 +1,6 @@
-class ProgramsController < ApplicationController
-  before_filter :check_admin_sign_in, except: [ :index, :show ]
-
+class Admin::ProgramsController < Admin::ApplicationController
   def index
     @programs = Program.all.reverse
-  end
-
-  def show
-    @program = Program.find params[:id]
   end
 
   def new
@@ -20,7 +14,7 @@ class ProgramsController < ApplicationController
   def create
     @program = Program.new params[:program]
     if @program.save
-      redirect_to @program
+      redirect_to admin_programs_path
     else
       render action: :new
     end
@@ -29,7 +23,7 @@ class ProgramsController < ApplicationController
   def update
     @program = Program.find params[:id]
     if @program.update_attributes params[:program]
-      redirect_to @program
+      redirect_to edit_admin_program_path @program
     else
       render action: :edit
     end
@@ -38,6 +32,6 @@ class ProgramsController < ApplicationController
   def destroy
     @program = Program.find params[:id]
     @program.destroy
-    redirect_to programs_path
+    redirect_to admin_programs_path
   end
 end

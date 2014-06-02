@@ -9,7 +9,6 @@ class CreateMembers < ActiveRecord::Migration
       t.text :post
       t.integer :parent_id
       t.integer :user_id
-      t.string :confirm
       t.timestamps
     end
   end

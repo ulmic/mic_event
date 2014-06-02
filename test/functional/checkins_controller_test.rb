@@ -4,7 +4,7 @@ class CheckinsControllerTest < ActionController::TestCase
   setup do
     @checkin = create :checkin
     @member = create :member
-    @member.accept
+    @member.user.accept
     @event = create :event
   end
 
@@ -63,7 +63,7 @@ class CheckinsControllerTest < ActionController::TestCase
 
   test "should destroy checkin" do
     member = @checkin.member
-    member.accept
+    member.user.accept
     user_sign_in member
 
     assert_difference('Checkin.count', -1) do

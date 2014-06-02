@@ -1,9 +1,10 @@
 require 'test_helper'
 
-class ProgramsControllerTest < ActionController::TestCase
+class Admin::ProgramsControllerTest < ActionController::TestCase
   setup do
     @program = create :program
     @admin = create :admin
+    user_sign_in @admin
   end
 
   test "should get index" do
@@ -24,14 +25,10 @@ class ProgramsControllerTest < ActionController::TestCase
     attributes = attributes_for :program
     post :create, program: attributes
     assert_response :redirect
+    assert_redirected_to admin_programs_path
 
     @program = Program.last
     assert_equal attributes[:name], @program.name
-  end
-
-  test "should show program" do
-    get :show, id: @program
-    assert_response :success
   end
 
   test "should get edit program" do
@@ -47,6 +44,7 @@ class ProgramsControllerTest < ActionController::TestCase
     attributes = attributes_for :program
     put :update, id: @program, program: attributes
     assert_response :redirect
+    assert_redirected_to edit_admin_program_path @program
 
     @program.reload
     assert_equal attributes[:name], @program.name
@@ -59,7 +57,7 @@ class ProgramsControllerTest < ActionController::TestCase
       delete :destroy, id: @program
     end
 
-    assert_redirected_to programs_path
+    assert_redirected_to admin_programs_path
   end
 
   test "should not create program with render new" do
