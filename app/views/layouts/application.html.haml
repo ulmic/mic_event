@@ -30,6 +30,10 @@
                   %li.pull-right
                     %a{ href: member_path(current_user.member) }
                       Мой профиль
+                      - if current_user.new?
+                        (
+                        = t('.profile_is_not_accepted')
+                        )
                   - if admin_signed_in?
                     %li.pull-right
                       %a{ href: admin_users_path }

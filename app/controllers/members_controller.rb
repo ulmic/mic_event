@@ -18,7 +18,7 @@ class MembersController < ApplicationController
         redirect_to new_user_path
       end
     else
-      redirect_to root_path
+      redirect_to root_path, flash: :success
     end
   end
 
