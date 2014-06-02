@@ -8,9 +8,13 @@ ru:
       ulmic_is: МИЦ - это...
       contacts: Контакты
       phone: Телефон
+    application:
+      profile_is_not_accepted: Профиль не подтверждён
   users:
     new:
       user_registration: Регистрация пользователя
+      i_agree: Я принимаю
+      license_agreement: Политику конфиденциальности
   admins:
     new:
       title: Новый администратор
