@@ -4,7 +4,7 @@ class PlacesControllerTest < ActionController::TestCase
   setup do
     @place = create :place
     @member = create :member
-    @member.accept
+    @member.user.accept
   end
 
   test "should get index" do
