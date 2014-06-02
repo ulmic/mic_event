@@ -40,6 +40,7 @@ MicEvents::Application.routes.draw do
     resources :events, except: :show
     resources :places, except: :show
     resources :checkins, except: :show
+    resources :members, except: :show
     resources :users, except: [ :show, :destroy ] do
       member do
         put :accept
