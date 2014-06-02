@@ -15,7 +15,7 @@
       = f.input :begin_datetime, input_html: { class: :span1 }
       = f.input :end_datetime, input_html: { class: :span1 }
       = f.association :place,      label_method: :title, value_method: :id
-      %a.btn{ href: new_place_path }
+      %a.btn{ href: new_admin_place_path }
         = t('.add_place')
       = f.association :program,    label_method: :name, value_method: :id
       = f.association :member,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
