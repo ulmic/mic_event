@@ -14,18 +14,18 @@ module ApplicationHelper
   end
 
   def last_event_photo
-    Event.last.photo
+    Event.last.photo if Event.any?
   end
 
   def last_event_title
-    Event.last.title
+    Event.last.title if Event.any?
   end
 
   def last_event_description
-    Event.last.description
+    Event.last.description if Event.any?
   end
 
   def last_event_date
-    Event.last.decorate.date
+    Event.last.decorate.date if Event.any?
   end
 end
