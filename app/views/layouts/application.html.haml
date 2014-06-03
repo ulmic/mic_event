@@ -1,17 +1,15 @@
 %html
   %head
     %title Этажи Роста
-    = stylesheet_link_tag "bootstrap_and_overrides"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = favicon_link_tag 'favicon.ico'
   %body
     = render "layouts/header"
-    .row
+    .main_content
       = flash_messages
       = yield
       = render "layouts/reformal"
-    .row
-      %hr
-      = render "layouts/footer"
+    = render "layouts/footer"
+    .left_column_content
