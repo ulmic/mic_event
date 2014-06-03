@@ -1,5 +1,7 @@
 ru:
   admin:
+    helpers:
+      back_to_admin: Назад в Админку
     welcome:
       index:
         new_users: Новые пользователи

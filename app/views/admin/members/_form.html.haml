@@ -5,7 +5,7 @@
     %ul
     - @member.errors.full_messages.each do |msg|
       %li= msg
-= simple_form_for @member do |f|
+= simple_form_for @member, url: { controller: "admin/members", action: action } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
       = f.label :first_name,       class: :span6
@@ -33,4 +33,4 @@
       = t('mandatory attributes')
   .form-actions
     = f.button :submit, t('save'), class: 'btn btn-primary'
-    = link_to t('cancel', default: t("helpers.links.cancel")), members_path, class: 'btn'
+    = link_to t('cancel', default: t("helpers.links.cancel")), admin_members_path, class: 'btn'

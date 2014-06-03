@@ -6,10 +6,9 @@
       %hr
     %li.span3.member_cell
       .thumbnail.height_thumbnail
-        %a{ href: member_path(member) }
+        %a{ href: edit_admin_member_path(member) }
           = image_tag member.decorate.present_photo_big_thumb
         %h3= member.fio
         %p= member.post
-        %br
-        %a.btn.btn-medium{ href: member_path(member) } Подробнее
 = paginate @members
+= link_to t('admin.helpers.back_to_admin'), admin_path, class: :btn

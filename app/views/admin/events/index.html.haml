@@ -1,8 +1,16 @@
-%table.table-striped
+%table.table.table-striped
   - @events.each do |event|
-    %a{ href: event_path(event) }
-      %tr
-        = event.title
+    %tr
+      %td
+        %a{ href: edit_admin_event_path(event) }
+          = event.title
+      %td
+        = event.begin_datetime
+      %td
+        = event.end_datetime
+      %td
+        = event.member.decorate.fio
 = paginate @events
 .offset3.span4
   %a.btn{ href: new_admin_event_path } Добавить мероприятие
+  = link_to t('admin.helpers.back_to_admin'), admin_path, class: :btn

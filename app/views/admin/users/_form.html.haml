@@ -1,6 +1,6 @@
 = simple_form_for @user, url: { controller: 'admin/users', action: action }, html: { class: 'form-horizontal' } do |f|
   = f.input :email
-  = f.input :password
+  = f.input :password, as: :hidden, value: @user.password
   = f.input :confirm_state, as: :select, collection: User.state_machines[:confirm_state].states
   = f.input :role
   .form-actions

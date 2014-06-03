@@ -23,9 +23,9 @@ class Admin::EventsController < Admin::ApplicationController
   def update
     @event = Event.find params[:id]
     if @event.update_attributes params[:event]
-      redirect_to edit_admin_event_path(@event)
+      redirect_to edit_admin_event_path(@event), flash: :success
     else
-      render action: :edit
+      render action: :edit, flash: :error
     end
   end
 

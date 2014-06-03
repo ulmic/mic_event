@@ -23,9 +23,9 @@ class Admin::ProgramsController < Admin::ApplicationController
   def update
     @program = Program.find params[:id]
     if @program.update_attributes params[:program]
-      redirect_to edit_admin_program_path @program
+      redirect_to edit_admin_program_path @program, flash: :success
     else
-      render action: :edit
+      render action: :edit, flash: :error
     end
   end
 
