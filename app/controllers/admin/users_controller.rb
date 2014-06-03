@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   def index
-    @users = User.all
+    @users = User.all.reverse
   end
   def new
     @user = User.new
