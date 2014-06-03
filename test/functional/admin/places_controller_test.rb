@@ -47,7 +47,7 @@ class Admin::PlacesControllerTest < ActionController::TestCase
       delete :destroy, id: @place
     end
 
-    assert_redirected_to places_path
+    assert_redirected_to admin_places_path
   end
 
   test "should not create place with render new" do
