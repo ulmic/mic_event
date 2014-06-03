@@ -59,4 +59,10 @@ class Admin::CheckinsControllerTest < ActionController::TestCase
     @checkin.reload
     assert_not_equal attributes[:description], @checkin.description
   end
+  test "should delete destroy" do
+    count = Checkin.count
+    delete :destroy, id: @checkin
+    assert_redirected_to admin_checkins_path
+    assert_equal count - 1, Checkin.count
+  end
 end

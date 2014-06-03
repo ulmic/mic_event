@@ -12,8 +12,34 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
+    user_sign_in @member.user
     get :show, id: @member
     assert_response :success
+  end
+
+  test "should get show without photo and man" do
+    member = create :member_without_photo
+    member.middle_name = "Павел"
+    member.save
+    user_sign_in member.user
+    get :show, id: member
+    assert_response :success
+  end
+
+  test "should get show without photo and woman" do
+    member = create :member_without_photo
+    member.middle_name = "Мария"
+    member.save
+    user_sign_in member.user
+    get :show, id: member
+    assert_response :success
+  end
+
+  test "should get show with busted member" do
+    @member.user.bust
+    get :show, id: @member
+    assert_response :redirect
+    assert_redirected_to not_found_errors_path
   end
 
   test "should get new member" do
@@ -51,6 +77,15 @@ class MembersControllerTest < ActionController::TestCase
 
     get :edit, id: @member
     assert_response :success
+  end
+
+  test "should not get edit with busted member" do
+    @member.user.bust
+    user_sign_in @member
+
+    get :edit, id: @member
+    assert_response :redirect
+    assert_redirected_to you_are_busted_pages_path
   end
 
   test "should not get edit member with not access" do

@@ -9,11 +9,13 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    user_sign_in @member.user
     get :index
     assert_response :success
   end
 
   test "should show event" do
+    user_sign_in @member.user
     get :show, id: @event
     assert_response :success
   end

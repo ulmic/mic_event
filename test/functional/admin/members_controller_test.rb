@@ -59,4 +59,11 @@ class Admin::MembersControllerTest < ActionController::TestCase
     @member.reload
     assert_not_equal attributes[:first_name], @member.first_name
   end
+
+  test "should delete destroy" do
+    count = Member.count
+    delete :destroy, id: @member
+    assert_redirected_to admin_members_path
+    assert_equal count - 1, Member.count
+  end
 end

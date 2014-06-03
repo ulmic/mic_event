@@ -37,20 +37,4 @@ class MemberDecorator < Draper::Decorator
       user_pic
     end
   end
-
-  def confirm_status
-    if model.accepted?
-      h.content_tag :span, class: "label label-success" do
-        model.confirm
-      end
-    elsif model.busted?
-      h.content_tag :span, class: "label label-important" do
-        model.confirm
-      end
-    elsif model.new?
-      h.content_tag :span, class: "label label-info" do
-        model.confirm
-      end
-    end
-  end
 end

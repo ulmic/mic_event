@@ -25,6 +25,16 @@ class PlacesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should show place with one day event" do
+    event = create :event
+    event.place = @place
+    event.end_datetime = event.begin_datetime + 1.hour
+    @place.events.push event
+
+    get :show, id: @place
+    assert_response :success
+  end
+
   test "should show place with event_date at different days" do
     event = create :event
     event.place = @place
