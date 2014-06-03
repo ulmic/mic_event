@@ -7,9 +7,7 @@
     = favicon_link_tag 'favicon.ico'
   %body
     = render "layouts/header"
-    .main_content
-      = flash_messages
-      = yield
-      = render "layouts/reformal"
+    = flash_messages
+    = yield
+    = render "layouts/reformal"
     = render "layouts/footer"
-    .left_column_content

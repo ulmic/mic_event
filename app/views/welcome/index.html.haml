@@ -1,14 +1,27 @@
 = stylesheet_link_tag :welcome
-- @events.each_with_index do |event, i|
-  .event.link{ style: "border-bottom: #{event_border(@events.count, i)}" }
-    .event_logo{  onclick: "location.href = '#{event_path(event)}'" }
-      = link_to event_path(event) do
-        = image_tag event.photo.big_thumb, class: 'big_logo'
-    .event_title{  onclick: "location.href = '#{event_path(event)}'" }
-      = event.title
-    .event_description{  onclick: "location.href = '#{event_path(event)}'" }
-      = event.description
-    .event_visitors
-      - event.decorate.people.each do |member|
-        %a{ href: member_path(member) }
-          = image_tag member.decorate.present_photo_mini_thumb, class: :checked_member_pic
+.main_content
+  - @events.each_with_index do |event, i|
+    .event.link{ style: "border-bottom: #{event_border(@events.count, i)}" }
+      .event_logo{  onclick: "location.href = '#{event_path(event)}'" }
+        = link_to event_path(event) do
+          = image_tag event.photo.big_thumb, class: 'big_logo'
+      .event_title{  onclick: "location.href = '#{event_path(event)}'" }
+        = event.title
+      .event_description{  onclick: "location.href = '#{event_path(event)}'" }
+        = event.description
+      .event_visitors
+        - event.decorate.people.each do |member|
+          %a{ href: member_path(member) }
+            = image_tag member.decorate.present_photo_mini_thumb, class: :checked_member_pic
+.left_column_content.checkins
+  - @checkins.each do |checkin|
+    .checkin
+      .checkin_member_pic
+        = link_to member_path(checkin.member) do
+          = image_tag checkin.member.decorate.present_photo_thumb, class: :checked_member_pic
+      .checkin_description
+        .checkin_description_text
+          = checkin.description
+      .checkin_event_photo
+        = link_to event_path(checkin.event) do
+          = image_tag checkin.event.photo.thumb, class: :checkin_event_photo_thumb
