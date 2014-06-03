@@ -44,7 +44,7 @@ class Admin::ProgramsControllerTest < ActionController::TestCase
     attributes = attributes_for :program
     put :update, id: @program, program: attributes
     assert_response :redirect
-    assert_redirected_to edit_admin_program_path @program
+    assert_redirected_to "#{edit_admin_program_path @program}?flash=success"
 
     @program.reload
     assert_equal attributes[:name], @program.name

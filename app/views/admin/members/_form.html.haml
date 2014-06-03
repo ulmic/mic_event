@@ -1,0 +1,36 @@
+= stylesheet_link_tag :members
+- if @member.errors.any?
+  #error_explanation
+    = "#{ pluralize(@member.errors.count, "error") } #{ t('.prohibited_this_member_from_being_saved') }:"
+    %ul
+    - @member.errors.full_messages.each do |msg|
+      %li= msg
+= simple_form_for @member, url: { controller: "admin/members", action: action } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
+    .field
+      = f.label :first_name,       class: :span6
+      = f.text_field :first_name,  class: :span6
+      = f.label :middle_name,      class: :span6
+      = f.text_field :middle_name, class: :span6
+      = f.label :last_name,        class: :span6
+      = f.text_field :last_name,   class: :span6
+      = f.label :post,             class: :span6
+      = f.text_field :post,        class: :span6
+      = f.label :id,               class: :span6
+      = f.number_field :id,        class: :span6, min: 1
+      = f.association :parent,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
+      = f.label :motto,            class: :span6
+      = f.text_field :motto,       class: :span6
+      = f.label :photo,            class: :span6
+      - if @member and @member.photo
+        = image_tag @member.photo.thumb, class: 'img-polaroid'
+        %b
+          = t '.choose_new_photo'
+        %br
+        = f.file_field :photo, class: 'btn'
+    .mandatory_attributes
+      * -
+      = t('mandatory attributes')
+  .form-actions
+    = f.button :submit, t('save'), class: 'btn btn-primary'
+    = link_to t('cancel', default: t("helpers.links.cancel")), admin_members_path, class: 'btn'

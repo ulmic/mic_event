@@ -1,0 +1,12 @@
+ru:
+  admin:
+    helpers:
+      back_to_admin: Назад в Админку
+    welcome:
+      index:
+        new_users: Новые пользователи
+        checkins: Чекины
+        events: Мероприятия
+        places: Места
+        members: МИЦевцы
+        programs: Программы и проекты

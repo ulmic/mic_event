@@ -1,0 +1,20 @@
+%h4
+  %ul
+    %li
+      = link_to t('.new_users'), admin_users_path
+      = new_users_count
+    %li
+      = link_to t('.checkins'), admin_checkins_path
+      = checkins_count
+    %li
+      = link_to t('.events'), admin_events_path
+      = events_count
+    %li
+      = link_to t('.places'), admin_places_path
+      = places_count
+    %li
+      = link_to t('.members'), admin_members_path
+      = members_count
+    %li
+      = link_to t('.programs'), admin_programs_path
+      = programs_count

@@ -51,7 +51,7 @@
                       = t('auth')
     .jumbotron
       .row
-        = flash[:notice]
+        = flash_messages
         = yield
         = render "layouts/reformal"
       .row

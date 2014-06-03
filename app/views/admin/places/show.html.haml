@@ -1,0 +1,23 @@
+%h1
+  = @place.title
+%hr
+  = @place.description
+%hr
+= t('.events_held_here')
+%br
+%table.table.table-stripped
+  - @place.events.reverse.each do |event|
+    %tr{ onclick: "return location.href='#{event_path(event)}'" }
+      %td
+        %h4
+          = event.title
+      %td
+        %h5
+          = event.decorate.date
+%hr
+= t('.people_were_here')
+- @place.decorate.people.each do |member|
+  %a{ href: member_path(member) }
+    .mini-thumb
+      = image_tag member.decorate.present_photo.thumb, class: 'img-rounded'
+

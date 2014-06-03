@@ -1,0 +1,5 @@
+.row
+  .offset3.span6
+    %h1= t('.add_event')
+    %hr
+    = render partial: "form", locals: { action: :create }

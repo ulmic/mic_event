@@ -5,22 +5,19 @@
     %ul
     - @event.errors.full_messages.each do |msg|
       %li= msg
-= simple_form_for @event  do |f|
+= simple_form_for @event, url: { controller: "admin/events", action: action } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
-      = f.label :title,            class: :span6
-      = f.text_field :title,       class: :span6
+      = f.input :title, as: :string
       = f.label :description,      class: :span6
       = f.text_area :description, class: :span6
-      = f.label :begin_datetime
-      = f.datetime_select :begin_datetime
-      = f.label :end_datetime
-      = f.datetime_select :end_datetime
+      = f.input :begin_datetime, input_html: { class: :span1 }
+      = f.input :end_datetime, input_html: { class: :span1 }
       = f.association :place,      label_method: :title, value_method: :id
-      %a.btn{ href: new_place_path }
+      %a.btn{ href: new_admin_place_path }
         = t('.add_place')
       = f.association :program,    label_method: :name, value_method: :id
       = f.association :member,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
     .form-actions
       = f.button :submit, t('save'), class: 'btn btn-primary'
-      = link_to t('cancel', default: t("helpers.links.cancel")), events_path, class: 'btn'
+      = link_to t('cancel', default: t("helpers.links.cancel")), admin_events_path, class: 'btn'
