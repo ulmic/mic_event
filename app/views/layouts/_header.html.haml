@@ -1,0 +1,31 @@
+.header
+  .logo
+  :sass
+    .events_photo
+      float: left
+      height: 100%
+      width: 90%
+      color: black
+      text-align: center
+      vertical-align: center
+
+    .events_photo:after
+      top: 0
+      left: 10%
+      height: 18%
+      width: 90%
+      position: absolute
+      background-repeat: no-repeat
+      background-size: 100%
+      background-position: center center
+      background-image: url("#{last_event_photo}")
+      content: ""
+      z-index: -1
+      opacity: 0.5
+  .events_photo
+    #events_photo_text
+      %h3
+        = last_event_title
+      = last_event_description
+      %br
+      = last_event_date

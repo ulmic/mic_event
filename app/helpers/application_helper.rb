@@ -12,4 +12,20 @@ module ApplicationHelper
       current_user.accepted?
     end
   end
+
+  def last_event_photo
+    Event.last.photo
+  end
+
+  def last_event_title
+    Event.last.title
+  end
+
+  def last_event_description
+    Event.last.description
+  end
+
+  def last_event_date
+    Event.last.decorate.date
+  end
 end
