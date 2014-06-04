@@ -32,6 +32,10 @@ ru:
       checkined_here: Здесь отметились
       location: Место проведения
       responsible: Ответственный
+      place: Место проведения
+      were_here: Были здесь
+      check_in: Отметиться
+      date: Дата
   places:
     form:
       prohibited_this_member_from_being_saved: Место не может быть создано
