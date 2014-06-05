@@ -28,4 +28,12 @@ module ApplicationHelper
   def last_event_date
     Event.last.decorate.date if Event.any?
   end
+
+  def current_user_decorate
+    current_user.member.decorate
+  end
+
+  def current_member
+    current_user.member
+  end
 end

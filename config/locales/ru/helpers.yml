@@ -2,3 +2,4 @@ ru:
   helpers:
     check_in: Отметиться
     sign_in: Войти
+    sign_out: Выйти
