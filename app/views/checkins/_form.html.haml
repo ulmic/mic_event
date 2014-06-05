@@ -1,9 +1,8 @@
 = simple_form_for @checkin, html: { class: 'form-horizontal' } do |f|
-  - f.with_options input_html: { class: :span6 } do |f|
-    .field
-      = f.label :description, class: :span6
-      = f.text_field :description, class: :span6
-      = f.input :status
-    .form-actions
-      = f.button :submit, t('.to_checkin'), class: 'btn btn-primary'
-      = link_to t('cancel', default: t("helpers.links.cancel")), checkins_path, class: 'btn'
+  .field
+    = f.label :description, class: :span6
+    = f.text_field :description, class: :span6
+    = f.input :status
+  .form-actions
+    = f.submit t('helpers.check_in'), class: :btn
+    = link_to t('cancel', default: t("helpers.links.cancel")), checkins_path, class: 'btn'
