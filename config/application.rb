@@ -18,6 +18,7 @@ module MicEvents
     config.assets.version = '1.0'
     config.i18n.default_locale = :ru
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    I18n.enforce_available_locales = false
 
     config.generators do |g|
       g.template_engine :haml
