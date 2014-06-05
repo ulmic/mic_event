@@ -44,6 +44,8 @@ ru:
   checkins:
     form:
       to_checkin: Зачекиниться
+    new:
+      check_in_on: "Создайте новое посещение на \"%{event_title}\""
 
   date:
     formats:
