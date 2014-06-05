@@ -16,4 +16,15 @@ class EventDecorator < Draper::Decorator
     end
     people
   end
+
+  require 'tactful_tokenizer'
+
+  def lead
+    t = TactfulTokenizer::Model.new
+    t.tokenize_text(model.description).first
+  end
+
+  def long_lead
+    "#{model.description.first(200)}..."
+  end
 end

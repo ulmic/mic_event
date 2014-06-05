@@ -21,8 +21,8 @@ module ApplicationHelper
     Event.last.title if Event.any?
   end
 
-  def last_event_description
-    Event.last.description if Event.any?
+  def last_event_description_lead
+    Event.last.decorate.lead if Event.any?
   end
 
   def last_event_date

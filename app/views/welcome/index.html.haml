@@ -8,11 +8,11 @@
       .event_title.link{  onclick: "location.href = '#{event_path(event)}'" }
         = event.title
       .event_date.link{  onclick: "location.href = '#{event_path(event)}'" }
-        = event.decorate.date
+        = event.date
       .event_description.link{  onclick: "location.href = '#{event_path(event)}'" }
-        = event.description
+        = event.long_lead
       .event_visitors
-        - event.decorate.people.each do |member|
+        - event.people.each do |member|
           %a{ href: member_path(member) }
             = image_tag member.decorate.present_photo_mini_thumb, class: :checked_member_pic
 .left_column_content.checkins

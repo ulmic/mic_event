@@ -25,6 +25,7 @@ gem 'bootstrap_flash_messages'
 gem 'usefull_scopes'
 gem 'configus'
 gem 'russian'
+gem 'tactful_tokenizer'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
