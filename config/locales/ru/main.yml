@@ -34,7 +34,6 @@ ru:
       responsible: Ответственный
       place: Место проведения
       were_here: Были здесь
-      check_in: Отметиться
       date: Дата
   places:
     form:
