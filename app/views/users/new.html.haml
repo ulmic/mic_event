@@ -13,3 +13,7 @@
     .form-actions
       = f.button :submit, t('save'), class: 'btn btn-primary', id: "submit"
       = link_to t('cancel', default: t("helpers.links.cancel")), users_path, class: 'btn'
+
+
+= t('.there_is_account')
+= link_to t('.auth'), new_session_path, class: :btn

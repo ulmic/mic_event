@@ -3,7 +3,7 @@ class Admin::ApplicationController < ApplicationController
 
   def check_admin_sign_in
     unless user_signed_in?
-      redirect_to not_found_errors_path
+      redirect_to new_session_path
     else
       #FIXME admin? method
       unless current_user.role == "admin"
