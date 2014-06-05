@@ -19,7 +19,7 @@
     .event__member_fio
       = "#{t('.responsible')}:"
       %a{ href: member_path(@event.member) }
-        = @event.member.decorate.fio
+        = "#{@event.member.decorate.fio};"
     .event__event_date
       = "#{t('.date')}:"
       = @event.date
