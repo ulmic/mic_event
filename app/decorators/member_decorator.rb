@@ -45,4 +45,8 @@ class MemberDecorator < Draper::Decorator
       user_pic
     end
   end
+
+  def checkin_on(event)
+    model.checkins.select { |checkin| checkin.event_id == event.id }.first
+  end
 end

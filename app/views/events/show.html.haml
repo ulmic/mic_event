@@ -7,9 +7,12 @@
     - if confirmed_member_signed_in?
       - unless current_user_checkined? @event
         .event__checkin_button
-          = link_to t('.check_in'), new_checkin_path(@event), class: :btn
+          = link_to t('helpers.check_in'), new_checkin_path(@event), class: :btn
       - else
-        = t('.checkined_here')
+        .event__you_are_checked_in
+          = t('helpers.you_are_checked_in')
+        .event__delete_check_in
+          = link_to t('.remove_check_in'), checkin_path(current_user_decorate.checkin_on(@event)), method: :delete
   .event__event_data_layout
     .event__place_title
       = "#{t('.place')}:"

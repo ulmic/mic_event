@@ -1,5 +1,6 @@
 ru:
   helpers:
-    check_in: Отметиться
+    check_in: Я был здесь
+    you_are_checked_in: Вы были здесь
     sign_in: Войти
     sign_out: Выйти
