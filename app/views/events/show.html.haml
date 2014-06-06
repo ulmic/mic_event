@@ -27,6 +27,7 @@
       = "#{t('.date')}:"
       = @event.date
   .event__event_description
+    = image_tag @event.photo.big_thumb
     = @event.description
   .event__checkined_users
     .event__checkined_users_title
