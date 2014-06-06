@@ -106,19 +106,35 @@ select
   float: left
   width: 70%
   height: auto
+  padding-bottom: 10%
 
 .left_column_content
   margin-left: 1%
   float: left
   width: 29%
   height: auto
+  padding-bottom: 10%
 
 .footer
-  position: absolute
-  bottom: 0px
-  width: 100%
+  position: relative
+  margin-top: 10%
+  clear: both
   height: 10%
   margin-left: 10px
+
+.clearfix:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+.clearfix
+  display: inline-block
+
+* html .clearfix
+  height: 1%
+.clearfix
+  display: block
 
 .footer_title
   text-align: center
