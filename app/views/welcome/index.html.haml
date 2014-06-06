@@ -14,7 +14,7 @@
       .event_visitors
         - event.people.each do |member|
           %a{ href: member_path(member) }
-            = image_tag member.decorate.present_photo_mini_thumb, class: :checked_member_pic
+            = image_tag member.present_photo_mini_thumb, class: :checked_member_pic
 .left_column_content.checkins
   - @checkins.each do |checkin|
     .checkin

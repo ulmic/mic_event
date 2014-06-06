@@ -14,7 +14,7 @@ class EventDecorator < Draper::Decorator
     model.checkins.each do |checkin|
       people.push(checkin.member)
     end
-    people
+    MemberDecorator.decorate_collection people
   end
 
   require 'tactful_tokenizer'
@@ -25,6 +25,6 @@ class EventDecorator < Draper::Decorator
   end
 
   def long_lead
-    "#{model.description.first(200)}..."
+    "#{model.description.first(180)}..."
   end
 end
