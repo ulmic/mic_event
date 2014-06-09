@@ -4,6 +4,8 @@ class MembersControllerTest < ActionController::TestCase
   setup do
     @member = create :member
     @user = create :user
+    @user.member = @member
+    @user.save
   end
 
   test "should get index" do
@@ -73,7 +75,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should get edit member" do
-    user_sign_in @member
+    user_sign_in @user
 
     get :edit, id: @member
     assert_response :success
@@ -81,7 +83,7 @@ class MembersControllerTest < ActionController::TestCase
 
   test "should not get edit with busted member" do
     @member.user.bust
-    user_sign_in @member
+    user_sign_in @user
 
     get :edit, id: @member
     assert_response :redirect
@@ -96,7 +98,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should update member" do
-    user_sign_in @member
+    user_sign_in @user
 
     attributes = attributes_for :member
     put :update, id: @member, member: attributes
@@ -117,7 +119,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not create member with render new" do
-    user_sign_in @member
+    user_sign_in @user
 
     attributes = attributes_for :member
     attributes[:first_name] = nil
@@ -126,7 +128,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should not update member with render edit" do
-    user_sign_in @member
+    user_sign_in @user
     attributes = attributes_for :member
     attributes[:first_name] = nil
     put :update, id: @member, member: attributes
