@@ -73,15 +73,14 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should destroy checkin" do
-    member = @checkin.member
-    member.user.accept
-    user_sign_in member
+    user_sign_in @member
+    event = @checkin.event
 
     assert_difference('Checkin.count', -1) do
       delete :destroy, id: @checkin
     end
 
-    assert_redirected_to member_path(member)
+    assert_redirected_to event_path(event)
   end
 
   test "should not create checkin with render new" do

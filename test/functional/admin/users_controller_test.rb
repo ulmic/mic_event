@@ -4,6 +4,7 @@ class Admin::UsersControllerTest < ActionController::TestCase
   setup do
     @user = create :user
     @user.role = :admin
+    @user.member = create :member
     @user.save
     user_sign_in @user
   end
