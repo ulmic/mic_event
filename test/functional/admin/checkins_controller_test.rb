@@ -4,6 +4,8 @@ class Admin::CheckinsControllerTest < ActionController::TestCase
   setup do
     @checkin = create :checkin
     @user = create :admin
+    @user.member = create :member
+    @user.save
     user_sign_in @user
   end
 
