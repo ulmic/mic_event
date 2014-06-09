@@ -29,9 +29,12 @@ ru:
       prohibited_this_member_from_being_saved: Мероприятие не может быть создано
       add_place: Добавить место
     show:
-      checkined_here: Здесь отметились
       location: Место проведения
       responsible: Ответственный
+      place: Место проведения
+      were_here: Были здесь
+      date: Дата
+      remove_check_in: Удалить посещение
   places:
     form:
       prohibited_this_member_from_being_saved: Место не может быть создано
@@ -41,6 +44,8 @@ ru:
   checkins:
     form:
       to_checkin: Зачекиниться
+    new:
+      check_in_on: "Создайте новое посещение на \"%{event_title}\""
 
   date:
     formats:

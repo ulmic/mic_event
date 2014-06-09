@@ -7,18 +7,170 @@
   src: url(PFBeauSansPro-Light.ttf)
 
 body
-  padding: 0px 100px
   font-family: micfont
+
+.title
+  font-size: 20pt
+  border-bottom: 1px lightgrey solid
+  margin-bottom: 2%
+
+input[type="submit"]
+  background-color: lightgrey
+  padding: 14px
+  padding-bottom: 13px
+  box-sizing: inherit
+  border: none
+  font-size: 12pt
+  cursor: pointer
+  font-family: micfont
+
+input[type="submit"]:hover
+  background-color: grey
+  color: white
+
+input
+  font-family: micfont
+
+select
+  font-family: micfont
+
+.field select
+  float: left
+  width: 25%
+  margin-right: 65%
+  margin-left: 1%
+  padding: 5px
+  margin-bottom: 10px
+
+.field input[type="text"]
+  float: left
+  margin-bottom: 10px
+  margin-left: 1%
+  width: 25%
+  margin-right: 65%
+
+.field
+  text-align: right
+
+.field label
+  margin-top: 5px
+  float: left
+  width: 9%
+
+.link
+  cursor: pointer
+
+.btn
+  background-color: lightgrey
+  padding: 15px
+  text-decoration: none
+  color: black
+
+.btn:hover
+  background-color: grey
+  font-color: whitee !important
+  color: white
+  font-style: normal
+
+.header
+  float: left
+  height: 18%
+  margin-bottom: 10px
+  margin-left: -10px
+  width: 100%
+  border: black 1px
+
+.logo
+  float: left
+  height: 100%
+  width: 10%
+  background-image: url(logo-mic.png)
+  background-size: auto 98%
+  background-position: center 2%
+  background-repeat: no-repeat
+
+.sign_in_button
+  float: right
+  margin-top: -5%
+
+.sign_out_button
+  float: right
+  margin-top: -7%
+
+.current_member_name
+  float: left
+  height: 30%
+  width: 100%
+
+.main_content
+  float: left
+  width: 70%
+  height: auto
+  padding-bottom: 10%
+
+.left_column_content
+  margin-left: 1%
+  float: left
+  width: 29%
+  height: auto
+  padding-bottom: 10%
+
+.footer
+  position: relative
+  margin-top: 10%
+  clear: both
+  height: 10%
+  margin-left: 10px
+
+.clearfix:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+.clearfix
+  display: inline-block
+
+* html .clearfix
+  height: 1%
+.clearfix
+  display: block
+
+.footer_title
+  text-align: center
+  font-size: 15pt
+
+.footer_list_links
+  margin-top: 10px
+
+.footer_list_links_item
+  float: left
+  width: 33%
+
+.social_buttons
+  float: left
+  width: 33%
+  height: 100%
+
+.about_us
+  float: left
+  width: 33%
+  height: 100%
+
+.contacts
+  float: left
+  width: 33%
+  height: 100%
+
+.social_button_logo
+  float: left
+  width: 15%
+  height: auto
+  margin-right: 5px
 
 #error_explanation
   font-size: 8pt
   color: red
-.logo-mic
-  width: 40px
-  height: 40px
-  background-image: url(logo.png)
-  background-size: contain
-  background-repeat: no-repeat
 .mandatory_attributes
   font-size: 8pt
   color: red
@@ -77,11 +229,3 @@ textarea
 .there_is_margin
   margin-top: 30px
   margin-left: 20px
-
-.logo
-  background-repeat: no-repeat
-  background-size: auto 100%
-  width: 110px
-  height: 110px
-  margin-top: 15px
-  float: left

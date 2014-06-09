@@ -1,60 +1,13 @@
 %html
   %head
-    %title Этажи Роста
-    = stylesheet_link_tag "bootstrap_and_overrides"
+    %title Я был здесь
     = stylesheet_link_tag "application"
-    = favicon_link_tag 'favicon.ico'
-  %body
-    .navbar-wrapper
-      .container
-        .navbar.navbar-inverse
-          .navbar-inner
-            %button.btn.btn-navbar
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.brand{ href: "http://ulmic.ru" }
-              .logo-mic
-            %a.brand{ href: root_path }
-              Этажи Роста МИЦ
-            .nav-collapse.collapse
-              %ul.nav
-                %li
-                  %a{ href: events_path }
-                    Мероприятия
-                %li
-                  %a{ href: members_path }
-                    Команда МИЦ
-                %li.divider-vertical
-                - if user_signed_in? and current_user.member
-                  %li.pull-right
-                    %a{ href: member_path(current_user.member) }
-                      Мой профиль
-                      - if current_user.new?
-                        (
-                        = t('.profile_is_not_accepted')
-                        )
-                  - if admin_signed_in?
-                    %li.pull-right
-                      %a{ href: admin_users_path }
-                        Админка
-                  %li.pull-right
-                    %a{ "data-method" => "delete", href: session_path,}
-                      Выйти
-                - else
-                  %li.pull-right
-                    %a{ href: new_user_path }
-                      = t('registration')
-                  %li.pull-right
-                    %a{ href: new_session_path }
-                      = t('auth')
-    .jumbotron
-      .row
-        = flash_messages
-        = yield
-        = render "layouts/reformal"
-      .row
-        %hr
-        = render "layouts/footer"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
+  %body
+    = render "layouts/header"
+    = flash_messages
+    = yield
+    = render "layouts/reformal"
+    = render "layouts/footer"

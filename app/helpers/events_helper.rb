@@ -4,4 +4,8 @@ module EventsHelper
       current_user.member.checkins.find_by_event_id(event.id)
     end
   end
+
+  def checkins_count(event)
+    event.checkins.count
+  end
 end

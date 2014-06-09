@@ -3,19 +3,19 @@ module Admin::WelcomeHelper
     User.with(confirm_state: :new).count
   end
 
-  def checkins_count
+  def all_checkins_count
     Checkin.count
   end
-  def events_count
+  def all_events_count
     Event.count
   end
-  def places_count
+  def all_places_count
     Place.count
   end
-  def members_count
+  def all_members_count
     Member.count
   end
-  def programs_count
+  def all_programs_count
     Program.count
   end
 end
