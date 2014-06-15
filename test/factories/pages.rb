@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :page do
     title "MyText"
-    slug "MyText"
+    slug { generate :string }
     body "MyText"
     publish { DateTime.now }
     author_id { Member.last ? Member.last.id : 1 }
