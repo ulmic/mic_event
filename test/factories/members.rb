@@ -9,5 +9,11 @@ FactoryGirl.define do
     parent_id      1
     user
     user_id { User.last.id }
+    association :departament
+    departament_id { Departament.last.id }
+    birthdate { generate :date }
+    phone
+    mail_index "000000"
+    home_adress { generate :string }
   end
 end

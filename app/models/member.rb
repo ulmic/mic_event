@@ -7,7 +7,12 @@ class Member < ActiveRecord::Base
                   :post,
                   :parent_id,
                   :user_id,
-                  :confirm
+                  :confirm,
+                  :departament_id,
+                  :birthdate,
+                  :home_adress,
+                  :phone,
+                  :mail_index
 
   mount_uploader :photo, PhotoUploader
 
@@ -17,10 +22,16 @@ class Member < ActiveRecord::Base
 
   belongs_to :parent, class_name: "Member"
   belongs_to :user
+  belongs_to :departament
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :middle_name, presence: true
   validates :motto, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+  validates :birthdate, presence: true
+  validates :departament_id, presence: true
+  validates :home_adress, presence: true
+  validates :phone, presence: true
+  validates :mail_index, presence: true, length: { maximum: 6 }
 end
