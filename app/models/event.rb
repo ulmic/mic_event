@@ -5,7 +5,10 @@ class Event < ActiveRecord::Base
                   :member_id,
                   :place_id,
                   :title,
-                  :program_id
+                  :program_id,
+                  :photo
+
+  mount_uploader :photo, PhotoUploader
 
   belongs_to :member
   belongs_to :place
@@ -19,4 +22,5 @@ class Event < ActiveRecord::Base
   validates :begin_datetime, presence: true
   validates :end_datetime, presence: true, date: { after: :begin_datetime }
   validates :program_id, presence: true
+  validates :photo, presence: true
 end

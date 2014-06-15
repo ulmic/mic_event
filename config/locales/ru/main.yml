@@ -1,0 +1,105 @@
+ru:
+  page_not_found:            Страницы, которую вы ищете, просто не существует
+  all_fields_must_not_blank: Все поля должны быть заполнены корректно
+  error_404:      Ошибка 404
+  layouts:
+    footer:
+      about:    О нас
+      ulmic_is: МИЦ - это...
+      contacts: Контакты
+      phone: Телефон
+    application:
+      profile_is_not_accepted: Профиль не подтверждён
+  users:
+    new:
+      user_registration: Регистрация пользователя
+      i_agree: Я принимаю
+      license_agreement: Политику конфиденциальности
+  admins:
+    new:
+      title: Новый администратор
+  members:
+    form:
+      prohibited_this_member_from_being_saved: Пользователь не может быть создан
+    show:
+  events:
+    new:
+      add_event: Добавить мероприятие
+    form:
+      prohibited_this_member_from_being_saved: Мероприятие не может быть создано
+      add_place: Добавить место
+    show:
+      location: Место проведения
+      responsible: Ответственный
+      place: Место проведения
+      were_here: Были здесь
+      date: Дата
+      remove_check_in: Удалить посещение
+  places:
+    form:
+      prohibited_this_member_from_being_saved: Место не может быть создано
+    show:
+      events_held_here: Мероприятие, прошедшие здесь
+      people_were_here: Люди, которые здесь были
+  checkins:
+    form:
+      to_checkin: Зачекиниться
+    new:
+      check_in_on: "Создайте новое посещение на \"%{event_title}\""
+
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d.%m.%Y %I:%M"
+  activerecord:
+    errors:
+      models:
+        admin_user:
+          attributes:
+            email:
+              blank: "Email не может быть пустым."
+    state_machines:
+      member:
+        confirm_state:
+          states:
+            new:    Неотмеченный
+            accepted: Подтверждённый
+            busted:   Опровергнутный
+          events:
+            accept: Подтвердить
+            bust:   Опровергнуть
+  save: Сохранить
+  edit: Изменить
+  cancel: Отмена
+  back: Назад
+  destroy: Удалить
+  are_you_sure: Вы уверены?
+  sign_out: Выйти
+  mandatory attributes: отмечены обязательные для заполнения аттрибуты
+  profile: профиль
+  members: Члены Молодёжного инициативного центра
+  parent:   Крёстный
+  add_place: Добавить место
+  auth: Войти
+  wrong_login: Неверные логин или пароль
+  organizer: Организатор
+  participant: Участник
+  registration: Регистрация
+  cover_your_profile: Заполните ваш профиль члена МИЦ
+  you_are_checkined_here: Вы уже чекинились на этом мероприятии
+  you_already_have_account: У вас уже есть аккаунт
+  make_an_admin: Сделать администратором
+  destroy_an_admin: Удалить администратора
+  your_account_must_be_confirmed_by_admins: Ваш профиль члена МИЦ должен быть подтверждён администратором
+  pages:
+    you_are_busted:
+      sorry_but_you_are_busted: "К сожалению, ваш профиль был удалён из-за нарушения правил этого сервиса."
+      license_agreement: Политика конфиденциальности
+  date:
+    order:
+    - :day
+    - :month
+    - :year

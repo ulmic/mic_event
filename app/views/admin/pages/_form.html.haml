@@ -1,0 +1,9 @@
+= simple_form_for @page, url: { controller: "admin/pages", action: action }, html: { class: 'form-horizontal' } do |f|
+  = f.input :title
+  = f.input :slug
+  = f.input :body
+  = f.input :publish
+  = f.input :author_id
+  .form-actions
+    = f.button :submit, class: 'btn-primary'
+    = link_to t('.cancel', default: t("helpers.links.cancel")), admin_pages_path, class: 'btn'

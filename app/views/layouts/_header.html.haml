@@ -1,0 +1,19 @@
+.header
+  .logo
+  = render "layouts/events_photo_style"
+  .events_photo
+    #events_photo_text
+      %h3
+        = last_event_title
+      = last_event_description_lead
+      %br
+      = last_event_date
+
+    - unless user_signed_in?
+      .sign_in_button
+        = link_to t('helpers.sign_in'), new_session_path, class: :btn
+    - else
+      .sign_out_button
+        .current_member_name
+          = link_to current_user_decorate.fio, member_path(current_member)
+        = link_to t('helpers.sign_out'), session_path, method: :delete, class: :btn

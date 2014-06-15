@@ -1,11 +1,14 @@
-.offset3.span5
-  %h2= t('auth')
-  = simple_form_for @user, url: session_path do |f|
-    - f.with_options input_html: { class: :span4 } do |f|
-      .field
-        = f.input :email
-        = f.input :password
+%h2= t('.auth')
+= simple_form_for @user, url: session_path do |f|
+  - f.with_options input_html: { class: :span4 } do |f|
+    .field
+      = f.input :email
+      = f.input :password
 
-    .form-actions
-      = f.button :submit, value: t('auth'), class: 'btn btn-primary'
-      = link_to t('cancel'), root_path, class: 'btn'
+  .form-actions
+    = f.button :submit, value: t('auth'), class: :btn
+    = link_to t('cancel'), root_path, class: :btn
+
+= t('.there_is_not_account')
+= link_to t('.registration'), new_user_path, class: :btn
+

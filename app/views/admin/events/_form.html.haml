@@ -1,0 +1,30 @@
+= stylesheet_link_tag "events"
+- if @event.errors.any?
+  #error_explanation
+    = "#{ pluralize(@event.errors.count, "error") } #{ t('.prohibited_this_event_from_being_saved') }:"
+    %ul
+    - @event.errors.full_messages.each do |msg|
+      %li= msg
+= simple_form_for @event, url: { controller: "admin/events", action: action } do |f|
+  - f.with_options input_html: { class: :span6 } do |f|
+    .field
+      = f.input :title, as: :string
+      = f.label :description,      class: :span6
+      = f.text_area :description, class: :span6
+      = f.input :begin_datetime, input_html: { class: :span1 }
+      = f.input :end_datetime, input_html: { class: :span1 }
+      = f.association :place,      label_method: :title, value_method: :id
+      %a.btn{ href: new_admin_place_path }
+        = t('.add_place')
+      = f.association :program,    label_method: :name, value_method: :id
+      = f.association :member,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
+      = f.label :photo,            class: :span6
+      - if @event and @event.photo
+        = image_tag @event.photo.thumb, class: 'img-polaroid'
+        %b
+          = t '.choose_new_photo'
+        %br
+        = f.file_field :photo, class: 'btn'
+    .form-actions
+      = f.button :submit, t('save'), class: 'btn btn-primary'
+      = link_to t('cancel', default: t("helpers.links.cancel")), admin_events_path, class: 'btn'

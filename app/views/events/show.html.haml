@@ -1,33 +1,39 @@
-.row-fluid
-  .span4
-    %h1
+= stylesheet_link_tag :events
+
+.event
+  .event__event_header_layout
+    .event__event_title
       = @event.title
-  .span4
-    %h3
+    - if confirmed_member_signed_in?
+      - unless current_user_checkined? @event
+        .event__checkin_button
+          = link_to t('helpers.check_in'), new_checkin_path(@event), class: :btn
+      - else
+        .event__you_are_checked_in
+          = t('helpers.you_are_checked_in')
+        .event__delete_check_in
+          = link_to t('.remove_check_in'), checkin_path(current_user_decorate.checkin_on(@event)), method: :delete
+  .event__event_data_layout
+    .event__place_title
+      = "#{t('.place')}:"
       %a{ href: place_path(@event.place) }
         = @event.place.title
-  .span2
-    .row
+      = ";"
+    .event__member_fio
+      = "#{t('.responsible')}:"
       %a{ href: member_path(@event.member) }
-        = t('.responsible')
-        .mini-thumb
-          = image_tag @event.member.decorate.present_photo_thumb, class: 'img-rounded'
-%hr
-.row-fluid
-  = @event.description
-%hr
-- if confirmed_member_signed_in?
-  - unless current_user_checkined? @event
-    %a.btn{ href: new_checkin_path(@event) } Зачекиниться здесь
-- else
-  %span.label.label-important
-    = t('your_account_must_be_confirmed_by_admins')
-%hr
-.row-fluid
-= t('.checkined_here')
-%br
-%br
-- @event.checkins.shuffle!.each do |checkin|
-  %a{ href: member_path(checkin.member) }
-    .mini-thumb
-      = image_tag checkin.member.decorate.present_photo_thumb, class: 'img-rounded'
+        = "#{@event.member.decorate.fio};"
+    .event__event_date
+      = "#{t('.date')}:"
+      = @event.date
+  .event__event_description
+    = image_tag @event.photo.big_thumb
+    = @event.description
+  .event__checkined_users
+    .event__checkined_users_title
+      = t('.were_here')
+      = checkins_count(@event)
+    .event__checkined_users_list
+      - @event.checkins.shuffle!.each do |checkin|
+        %a{ href: member_path(checkin.member) }
+          = image_tag checkin.member.decorate.present_photo_mini_thumb

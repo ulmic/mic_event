@@ -26,4 +26,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal attributes[:email], @user.email
   end
 
+  test "should not create user" do
+    attributes = attributes_for :user
+    attributes[:email] = nil
+    post :create, user: attributes
+    assert_response :success
+  end
 end

@@ -8,4 +8,7 @@ MicEvents::Application.configure do
   config.assets.digest = true
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
+  ActionDispatch::Reloader.to_prepare do
+    load Rails.root.join('lib/configus.rb')
+  end
 end

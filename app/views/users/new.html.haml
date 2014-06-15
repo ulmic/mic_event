@@ -6,6 +6,14 @@
       .field
         = f.input :email
         = f.input :password
+      = check_box_tag "privacy"
+      = t('.i_agree')
+      = link_to t('.license_agreement'), privacy_pages_path
+
     .form-actions
-      = f.button :submit, t('save'), class: 'btn btn-primary'
+      = f.button :submit, t('save'), class: 'btn btn-primary', id: "submit"
       = link_to t('cancel', default: t("helpers.links.cancel")), users_path, class: 'btn'
+
+
+= t('.there_is_account')
+= link_to t('.auth'), new_session_path, class: :btn

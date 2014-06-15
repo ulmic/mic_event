@@ -36,4 +36,7 @@ MicEvents::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  ActionDispatch::Reloader.to_prepare do
+    load Rails.root.join('lib/configus.rb')
+  end
 end

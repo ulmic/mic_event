@@ -1,0 +1,25 @@
+- model_class = Checkin
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:member_id) + ':'
+  %br
+  = @checkin.member_id
+%p
+  %strong= model_class.human_attribute_name(:event_id) + ':'
+  %br
+  = @checkin.event_id
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @checkin.description
+%p
+  %strong= model_class.human_attribute_name(:status) + ':'
+  %br
+  = @checkin.status
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), checkins_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_checkin_path(@checkin), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), checkin_path(@checkin), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

@@ -1,0 +1,14 @@
+%h1
+  = t('members')
+%ul.thumbnails
+  - @members.each_with_index do |member, i|
+    - if index_multiple_four?(i)
+      %hr
+    %li.span3.member_cell
+      .thumbnail.height_thumbnail
+        %a{ href: edit_admin_member_path(member) }
+          = image_tag member.decorate.present_photo_big_thumb
+        %h3= member.fio
+        %p= member.post
+= paginate @members
+= link_to t('admin.helpers.back_to_admin'), admin_path, class: :btn

@@ -4,7 +4,7 @@ class CheckinsControllerTest < ActionController::TestCase
   setup do
     @checkin = create :checkin
     @member = create :member
-    @member.accept
+    @member.user.accept
     @event = create :event
   end
 
@@ -43,6 +43,17 @@ class CheckinsControllerTest < ActionController::TestCase
     assert_equal attributes[:description], @checkin.description
   end
 
+  test "should not create checkin with new user" do
+    user_sign_in @member
+    @member.user.confirm_state = :new
+    @member.user.save
+    attributes = attributes_for :checkin
+    attributes[:member_id] = @member.id
+    post :create, id: @event, checkin: attributes
+    assert_response :redirect
+    assert_redirected_to root_path
+  end
+
   test "should get edit checkin" do
     user_sign_in @member
 
@@ -62,15 +73,14 @@ class CheckinsControllerTest < ActionController::TestCase
   end
 
   test "should destroy checkin" do
-    member = @checkin.member
-    member.accept
-    user_sign_in member
+    user_sign_in @member
+    event = @checkin.event
 
     assert_difference('Checkin.count', -1) do
       delete :destroy, id: @checkin
     end
 
-    assert_redirected_to member_path(member)
+    assert_redirected_to event_path(event)
   end
 
   test "should not create checkin with render new" do

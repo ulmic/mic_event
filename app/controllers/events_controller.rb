@@ -1,43 +1,9 @@
 class EventsController < ApplicationController
-  before_filter :check_confirmed_member_sign_in, except: [ :index, :show ]
-
   def index
     @events = Kaminari.paginate_array(EventDecorator.decorate_collection(Event.all.reverse)).page(params[:page])
   end
 
   def show
-    @event = Event.find params[:id]
-  end
-
-  def new
-    @event = Event.new
-  end
-
-  def edit
-    @event = Event.find params[:id]
-  end
-
-  def create
-    @event = Event.new params[:event]
-    if @event.save
-      redirect_to @event
-    else
-      render action: :new
-    end
-  end
-
-  def update
-    @event = Event.find params[:id]
-    if @event.update_attributes params[:event]
-      redirect_to @event
-    else
-      render action: :edit
-    end
-  end
-
-  def destroy
-    @event = Event.find params[:id]
-    @event.destroy
-    redirect_to events_path
+    @event = Event.find(params[:id]).decorate
   end
 end

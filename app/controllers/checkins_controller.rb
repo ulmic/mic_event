@@ -40,8 +40,8 @@ class CheckinsController < ApplicationController
 
   def destroy
     @checkin = Checkin.find params[:id]
-    member = @checkin.member
+    event = @checkin.event
     @checkin.destroy
-    redirect_to member_path(member)
+    redirect_to event_path(event)
   end
 end

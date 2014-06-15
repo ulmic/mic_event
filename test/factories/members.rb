@@ -8,5 +8,6 @@ FactoryGirl.define do
     post        { generate :string }
     parent_id      1
     user
+    user_id { User.last.id }
   end
 end
