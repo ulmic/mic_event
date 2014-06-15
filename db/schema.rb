@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140615013920) do
+ActiveRecord::Schema.define(:version => 20140615025233) do
 
   create_table "admins", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20140615013920) do
     t.integer  "event_id"
     t.text     "description"
     t.string   "status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "departaments", :force => true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "district"
+    t.integer  "lider_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -50,8 +59,13 @@ ActiveRecord::Schema.define(:version => 20140615013920) do
     t.text     "post"
     t.integer  "parent_id"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.datetime "birthdate"
+    t.integer  "departament_id"
+    t.text     "home_adress"
+    t.text     "phone"
+    t.text     "mail_index"
   end
 
   create_table "pages", :force => true do |t|
