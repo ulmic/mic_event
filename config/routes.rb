@@ -4,6 +4,7 @@ MicEvents::Application.routes.draw do
   resources :pages do
     collection do
       get :you_are_busted
+      get "/:slug" => "pages#show"
       get :privacy
     end
   end
@@ -41,6 +42,7 @@ MicEvents::Application.routes.draw do
     resources :places, except: :show
     resources :checkins, except: :show
     resources :members, except: :show
+    resources :pages, except: :show
     resources :users, except: [ :show, :destroy ] do
       member do
         put :accept
