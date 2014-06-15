@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   def privacy
   end
   def show
-    @page = Page.find(params[:id]).decorate
-    unless @page.published?
+    @page = Page.find_by_slug params[:slug]
+    unless @page and @page.decorate.published?
       redirect_to not_found_errors_path
     end
   end

@@ -13,13 +13,13 @@ class PagesControllerTest < ActionController::TestCase
     assert_response :success, @response.body
   end
   test "should get show" do
-    get :show, id: @page
+    get :show, slug: @page.slug
     assert_response :success, @response.body
   end
   test "should not show page" do
     @page.publish += 1.day
     @page.save
-    get :show, id: @page
+    get :show, slug: @page.slug
     assert_response :redirect, @response.body
     assert_redirected_to not_found_errors_path
   end

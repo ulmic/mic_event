@@ -1,9 +1,10 @@
 MicEvents::Application.routes.draw do
   root to: "welcome#index"
   get "/admin" => "admin/welcome#index"
-  resources :pages, only: :show do
+  resources :pages do
     collection do
       get :you_are_busted
+      get "/:slug" => "pages#show"
       get :privacy
     end
   end
