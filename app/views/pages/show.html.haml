@@ -1,0 +1,24 @@
+- model_class = Page
+.page-header
+  %h1=t '.title', default: model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @page.title
+%p
+  %strong= model_class.human_attribute_name(:slug) + ':'
+  %br
+  = @page.slug
+%p
+  %strong= model_class.human_attribute_name(:body) + ':'
+  %br
+  = @page.body
+%p
+  %strong= model_class.human_attribute_name(:publish) + ':'
+  %br
+  = @page.publish
+%p
+  %strong= model_class.human_attribute_name(:author_id) + ':'
+  %br
+  = @page.author_id
