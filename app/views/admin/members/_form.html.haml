@@ -8,20 +8,19 @@
 = simple_form_for @member, url: { controller: "admin/members", action: action } do |f|
   - f.with_options input_html: { class: :span6 } do |f|
     .field
-      = f.label :first_name,       class: :span6
-      = f.text_field :first_name,  class: :span6
-      = f.label :middle_name,      class: :span6
-      = f.text_field :middle_name, class: :span6
-      = f.label :last_name,        class: :span6
-      = f.text_field :last_name,   class: :span6
-      = f.label :post,             class: :span6
-      = f.text_field :post,        class: :span6
-      = f.label :id,               class: :span6
-      = f.number_field :id,        class: :span6, min: 1
-      = f.association :parent,     class: :span6, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
-      = f.label :motto,            class: :span6
-      = f.text_field :motto,       class: :span6
-      = f.label :photo,            class: :span6
+      = f.input :first_name
+      = f.input :middle_name
+      = f.input :last_name
+      = f.input :post
+      = f.input :id, min: 1
+      = f.association :parent, label_method: lambda { |member| "#{member.first_name} #{member.middle_name} #{member.last_name} | #{member.id}" }, value_method: :id
+      = f.input :motto
+      = f.association :departament, label_method: :title, value_method: :id
+      = f.input :birthdate
+      = f.input :home_adress
+      = f.input :phone
+      = f.input :mail_index
+      = f.label :photo
       - if @member and @member.photo
         = image_tag @member.photo.thumb, class: 'img-polaroid'
         %b

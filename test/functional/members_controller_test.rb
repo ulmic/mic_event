@@ -30,7 +30,7 @@ class MembersControllerTest < ActionController::TestCase
 
   test "should get show without photo and woman" do
     member = create :member_without_photo
-    member.middle_name = "Мария"
+    member.middle_name = "Maria"
     member.save
     user_sign_in member.user
     get :show, id: member
