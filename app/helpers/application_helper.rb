@@ -30,7 +30,9 @@ module ApplicationHelper
   end
 
   def current_user_decorate
-    current_user.member.decorate
+    if user_signed_in? and current_member
+      current_user.member.decorate
+    end
   end
 
   def current_member

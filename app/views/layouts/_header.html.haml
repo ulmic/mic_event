@@ -13,7 +13,8 @@
       .sign_in_button
         = link_to t('helpers.sign_in'), new_session_path, class: :btn
     - else
-      .sign_out_button
-        .current_member_name
-          = link_to current_user_decorate.fio, member_path(current_member)
-        = link_to t('helpers.sign_out'), session_path, method: :delete, class: :btn
+      - if current_member
+        .sign_out_button
+          .current_member_name
+            = link_to current_user_decorate.fio, member_path(current_member)
+          = link_to t('helpers.sign_out'), session_path, method: :delete, class: :btn
